@@ -64,7 +64,7 @@ public class SonsAdapter extends RecyclerView.Adapter<SonsAdapter.SonsViewHolder
             @Override
             public void onClick(View v) {
 
-                tinyDB.putString("sonPic",sonItems.get(position).getSonPic());
+               /* tinyDB.putString("sonPic",sonItems.get(position).getSonPic());
                 tinyDB.putString("sonName",sonItems.get(position).getSonName());
                 tinyDB.putString("sonBirthDate",sonItems.get(position).getSonBirthDate());
                 tinyDB.putString("sonGender",sonItems.get(position).getSonGender());
@@ -75,7 +75,7 @@ public class SonsAdapter extends RecyclerView.Adapter<SonsAdapter.SonsViewHolder
                 final FragmentManager fm = ((Activity) context).getFragmentManager();
                 EditSonFragment editPostFragment = new EditSonFragment();
 
-                editPostFragment.show(fm,"TV_tag");
+                editPostFragment.show(fm,"TV_tag");*/
             }
         });
 
