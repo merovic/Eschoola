@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/pic"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/distance_90x90"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -69,13 +69,14 @@
             android:id="@+id/feestext"
             android:layout_width="wrap_content"
             android:gravity="center"
+			android:visibility="invisible"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="المصاريف"/>
 
         <com.amirahmed.eschoola.Utiles.TextViewWithFont
             android:id="@+id/max2"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -84,8 +85,8 @@
 
         <ImageView
             android:id="@+id/pic2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/fee_90x90"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -94,32 +95,35 @@
 
     </RelativeLayout>
 
-    <org.florescu.android.rangeseekbar.RangeSeekBar
-        android:id="@+id/feesseeker"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        app:absoluteMaxValue="40000"
-        app:absoluteMinValue="0"
-        app:showLabels="false"
-        app:alwaysActive="true"
-        app:barHeight="2dp"
-        android:visibility="gone"
-        android:layout_margin="10dp"/>
 
-    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
-            android:id="@+id/rangeSeekbar1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            app:corner_radius="10"
-            app:min_value="0"
-            app:max_value="40000"
-            app:steps="5"
-            app:bar_color="#F7BB88"
-            app:bar_highlight_color="#E07416"
-            app:data_type="_integer"/>
+	<LinearLayout
+			android:id="@+id/rangelayout"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:rotation="0">
+
+		<com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+				android:id="@+id/rangeSeekbar1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:layout_marginRight="40dp"
+				android:layout_marginLeft="40dp"
+				android:layout_gravity="center"
+				app:left_thumb_color="@color/myPrimaryDarkColor"
+				app:right_thumb_color="@color/myPrimaryDarkColor"
+				app:corner_radius="10"
+				app:min_value="0"
+				app:max_value="40000"
+				app:steps="5"
+				app:bar_color="#F7BB88"
+				app:bar_highlight_color="@color/myPrimaryColor"
+				app:data_type="_integer"/>
+
+	</LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -129,18 +133,19 @@
 
         <LinearLayout
             android:id="@+id/multilayout"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_grayempty">
 
             <ImageView
                 android:id="@+id/multipic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:src="@drawable/boygirl"/>
+                android:layout_marginTop="2dp"
+                android:src="@drawable/multipe_both_gray_90x90"/>
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont
                 android:id="@+id/multi"
@@ -148,24 +153,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
+				android:layout_marginBottom="2dp"
                 android:text="مشتركة"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/girlslayout"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_grayempty">
 
             <ImageView
                 android:id="@+id/girlspic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:src="@drawable/girl"/>
+                android:layout_marginTop="2dp"
+                android:src="@drawable/girls_gray_90x90"/>
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont
                 android:id="@+id/girls"
@@ -173,24 +180,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
+				android:layout_marginBottom="2dp"
                 android:text="بنات"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/boyslayout"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_grayempty">
 
             <ImageView
                 android:id="@+id/boyspic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:src="@drawable/boyblue"/>
+                android:layout_marginTop="2dp"
+                android:src="@drawable/boys_90x90"/>
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont
                 android:id="@+id/boys"
@@ -198,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
+				android:layout_marginBottom="2dp"
                 android:textColor="@color/myPrimaryDarkColor"
                 android:text="بنين"/>
 
@@ -218,8 +228,8 @@
         android:layoutDirection="rtl">
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:src="@drawable/schooltype_90x90"/>
 
@@ -259,8 +269,8 @@
         android:layoutDirection="rtl">
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:src="@drawable/books_90x90"/>
 
@@ -298,8 +308,8 @@
         android:layoutDirection="rtl">
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:src="@drawable/city_90x90"/>
 
@@ -337,8 +347,8 @@
         android:layoutDirection="rtl">
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:src="@drawable/district_90x90"/>
 

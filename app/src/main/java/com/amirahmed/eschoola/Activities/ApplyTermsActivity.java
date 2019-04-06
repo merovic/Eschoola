@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 import java.lang.reflect.Field;
@@ -57,12 +58,11 @@ public class ApplyTermsActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("شروط القبول");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("شروط القبول");
 
-            getActionBarTextView().setText("شروط القبول");
+
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,7 +71,7 @@ public class ApplyTermsActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
 
 
@@ -80,12 +80,10 @@ public class ApplyTermsActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Apply Terms");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Apply Terms");
 
-            getActionBarTextView().setText("Apply Terms");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -95,7 +93,7 @@ public class ApplyTermsActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             container.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
@@ -106,24 +104,4 @@ public class ApplyTermsActivity extends AppCompatActivity {
         }
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

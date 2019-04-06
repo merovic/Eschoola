@@ -248,19 +248,19 @@ public class NavigationDrawerGuestFragment extends Fragment implements Navigatio
         List<NavigationItem> items = new ArrayList<>();
         if(language==1)
         {
+            items.add(new NavigationItem("الصفحة الشخصية", getResources().getDrawable(R.drawable.nameandprofile_60x60)));
             items.add(new NavigationItem("التقويم الدراسى", getResources().getDrawable(R.drawable.calender_60x60)));
             items.add(new NavigationItem("قائمتى المفضلة", getResources().getDrawable(R.drawable.favorite_60x60)));
             items.add(new NavigationItem("قائمة الحجوزات", getResources().getDrawable(R.drawable.reservation_list_60x60)));
-            items.add(new NavigationItem("الصفحة الشخصية", getResources().getDrawable(R.drawable.nameandprofile_60x60)));
             //items.add(new NavigationItem("الاعدادات", getResources().getDrawable(R.drawable.setting)));
             //items.add(new NavigationItem("مشاركة", getResources().getDrawable(R.drawable.sharenew)));
             //items.add(new NavigationItem("قيمنا", getResources().getDrawable(R.drawable.rate)));
         }else
         {
+            items.add(new NavigationItem("Profile", getResources().getDrawable(R.drawable.nameandprofile_60x60)));
             items.add(new NavigationItem("Calender", getResources().getDrawable(R.drawable.calender_60x60)));
             items.add(new NavigationItem("Favorite List", getResources().getDrawable(R.drawable.favorite_60x60)));
             items.add(new NavigationItem("Reservation List", getResources().getDrawable(R.drawable.reservation_list_60x60)));
-            items.add(new NavigationItem("Profile", getResources().getDrawable(R.drawable.nameandprofile_60x60)));
             //items.add(new NavigationItem("Setting", getResources().getDrawable(R.drawable.setting)));
             //items.add(new NavigationItem("Share", getResources().getDrawable(R.drawable.sharenew)));
             //items.add(new NavigationItem("Rate us", getResources().getDrawable(R.drawable.rate)));

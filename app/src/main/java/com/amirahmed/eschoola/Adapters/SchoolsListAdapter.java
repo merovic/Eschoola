@@ -93,7 +93,7 @@ public class SchoolsListAdapter extends RecyclerView.Adapter<SchoolsListAdapter.
         holder.compare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.compare.setBackgroundColor(Color.RED);
+                holder.compare.setBackgroundResource(R.drawable.rounded_fill_yellow);
             }
         });
 

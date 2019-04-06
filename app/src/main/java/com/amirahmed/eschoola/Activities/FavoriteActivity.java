@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.FavoriteAdapter;
 import com.amirahmed.eschoola.Models.SchoolsListItem;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 
@@ -53,12 +54,10 @@ public class FavoriteActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("المفضلة");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("المفضلة");
 
-            getActionBarTextView().setText("المفضلة");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,17 +66,15 @@ public class FavoriteActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         } else {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Favorite");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Favorite");
 
-            getActionBarTextView().setText("Favorite");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,9 +84,7 @@ public class FavoriteActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
-
-
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
         }
 
@@ -129,22 +124,4 @@ public class FavoriteActivity extends AppCompatActivity {
 
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

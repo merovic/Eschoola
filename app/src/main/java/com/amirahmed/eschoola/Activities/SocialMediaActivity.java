@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 
@@ -48,12 +49,10 @@ public class SocialMediaActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("التواصل");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("التواصل");
 
-            getActionBarTextView().setText("التواصل");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -62,18 +61,16 @@ public class SocialMediaActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }else
         {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Social Media");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Social Media");
 
-            getActionBarTextView().setText("Social Media");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,30 +80,9 @@ public class SocialMediaActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }
 
-    }
-
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
     }
 
 }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.CultureDetailsAdapter;
 import com.amirahmed.eschoola.Models.CultureItem;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.bumptech.glide.Glide;
 
@@ -61,19 +62,17 @@ public class CultureDetailsActivity extends AppCompatActivity {
 
         photo = findViewById(R.id.photo);
 
-        Glide.with(getActionBarTextView()).load(R.drawable.school3).into(photo);
+        Glide.with(getApplicationContext()).load(R.drawable.school3).into(photo);
 
         if(language==1)
         {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("التفاصيل");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("التفاصيل");
 
-            getActionBarTextView().setText("التفاصيل");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,18 +81,16 @@ public class CultureDetailsActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }else
         {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Details");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Details");
 
-            getActionBarTextView().setText("Details");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -103,7 +100,7 @@ public class CultureDetailsActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             readmore.setText("Read More...");
             title.setText("The origins of the practice of punishment towards the son");
@@ -152,24 +149,5 @@ public class CultureDetailsActivity extends AppCompatActivity {
     }
 
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
 
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

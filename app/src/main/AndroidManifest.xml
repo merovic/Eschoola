@@ -106,7 +106,7 @@
     <activity android:name=".Activities.ApplyTermsActivity"
               android:screenOrientation="portrait"/>
 
-    <activity android:name=".Activities.GuestProfile"
+    <activity android:name=".Activities.GuestProfileActivity"
               android:screenOrientation="portrait"/>
 
     <activity android:name=".Activities.ReservationActivity"

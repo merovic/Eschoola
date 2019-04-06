@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 
@@ -85,12 +86,10 @@ public class RegistrationActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("تسجيل الدخول");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("تسجيل الدخول");
 
-            getActionBarTextView().setText("تسجيل الدخول");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -99,7 +98,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             genderlist.add("اختر النوع");
             genderlist.add("ولد");
@@ -109,12 +108,10 @@ public class RegistrationActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Registration");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Registration");
 
-            getActionBarTextView().setText("Registration");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,7 +121,7 @@ public class RegistrationActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             firstnameedit.setHint("First Name");
             lastnameedit.setHint("Last Name");
@@ -180,9 +177,8 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(RegistrationActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(RegistrationActivity.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
             }
         });
 
@@ -195,22 +191,4 @@ public class RegistrationActivity extends AppCompatActivity {
         birthdateedit.setText(sdf.format(myCalendar.getTime()));
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

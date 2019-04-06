@@ -17,8 +17,8 @@
 
         <ImageView
                 android:id="@+id/logo"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="10dp"
                 android:layout_alignParentEnd="true"
@@ -64,17 +64,17 @@
     <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/facebook_login"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_gravity="center"
-        app:fb_radius="2dp"
+        app:fb_radius="70dp"
         app:fb_iconPosition="right"
-        app:fb_fontIconSize="20sp"
-        app:fb_iconPaddingRight="10dp"
-        app:fb_iconPaddingLeft="10dp"
+        app:fb_fontIconSize="30sp"
+        app:fb_iconPaddingRight="20dp"
+        app:fb_iconPaddingLeft="20dp"
         app:fb_textSize="16sp"
         app:fb_text="Login with Facebook"
         app:fb_textColor="#ffffff"
@@ -85,58 +85,80 @@
     <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/twitter_login"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        app:fb_radius="2dp"
+        app:fb_radius="70dp"
         app:fb_iconPosition="right"
-        app:fb_fontIconSize="20sp"
-        app:fb_iconPaddingRight="10dp"
-        app:fb_iconPaddingLeft="10dp"
+        app:fb_fontIconSize="30sp"
+        app:fb_iconPaddingRight="20dp"
+        app:fb_iconPaddingLeft="20dp"
         app:fb_textSize="16sp"
-        app:fb_text="Login with Twitter"
+        app:fb_text="Login with Twitter    "
         app:fb_textColor="#ffffff"
         app:fb_defaultColor="#4BC5FF"
         app:fb_focusColor="#6183d2"
         app:fb_fontIconResource="&#xf099;"/>
 
-    <Button
+    <LinearLayout
             android:id="@+id/loginbutton"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/myPrimaryDarkColor"
-            android:textColor="#FFF"
-            android:text="Login with Email"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_button">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="horizontal"
+        <TextView
+                android:id="@+id/logintext"
+                android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Login with Email    "
+                  android:textColor="@color/myDrawerBackground"
+                  android:textSize="16sp"/>
+
+        <ImageView android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="20dp"
+                   android:src="@drawable/envelope"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
                   android:layout_marginLeft="10dp"
                   android:layout_marginRight="10dp"
                   android:layout_marginTop="50dp"
-    android:gravity="center">
+                  android:gravity="center">
 
 
-
-        <Button
+    <Button
                 android:id="@+id/registrationbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/rounded_bluecurve"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/roundedsociallogin"
                 android:textColor="@color/myPrimaryDarkColor"
                 android:text="Register Now"
                 android:layout_gravity="center"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont android:layout_width="wrap_content"
+        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                android:id="@+id/donthavetext"
+                android:layout_width="wrap_content"
                                                         android:layout_height="wrap_content"
                                                         android:textSize="16sp"
                                                         android:textColor="@color/myPrimaryDarkColor"
@@ -146,9 +168,13 @@
     </LinearLayout>
 
 
-    <View android:layout_width="match_parent" android:layout_height="2dp"
+    <View android:layout_width="match_parent"
+          android:layout_height="2dp"
           android:background="#e3e3e3"
-    android:layout_margin="20dp"/>
+          android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="5dp"/>
 
 
     <com.amirahmed.eschoola.Utiles.TextViewWithFont

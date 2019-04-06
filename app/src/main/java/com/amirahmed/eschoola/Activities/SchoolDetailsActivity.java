@@ -1,18 +1,20 @@
 package com.amirahmed.eschoola.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -29,8 +31,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Objects;
 
-public class SchoolDetailsActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,OnMapReadyCallback {
+public class SchoolDetailsActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,OnMapReadyCallback, View.OnClickListener {
 
     private Toolbar mToolbar,mToolbar2;
 
@@ -41,6 +44,14 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
     LinearLayout vision,about,terms,fees,bottommenu;
 
     TextView visiontext,abouttext,termstext,feestext;
+
+    RelativeLayout iv_trigger;
+
+    CoordinatorLayout coordinatorLayout;
+
+    ImageView logo,male,female,sun,moon,acsw;
+
+    TextView schoolname,cityname;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,18 +74,17 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         termstext = findViewById(R.id.termstext);
         feestext = findViewById(R.id.feestext);
 
+        coordinatorLayout = findViewById(R.id.coordinator);
+
+        init_persistent_bottomsheet();
 
         if(language==1)
         {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("تفاصيل المدرسة");
-
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("تفاصيل المدرسة");
-
-            getActionBarTextView().setText("تفاصيل المدرسة");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,19 +93,16 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
+
 
         }else
         {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("School Details");
-
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("School Details");
-
-            getActionBarTextView().setText("School Details");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -105,7 +112,7 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             visiontext.setText("Vision");
             abouttext.setText("About");
@@ -114,6 +121,8 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         }
 
         SliderLayout mDemoSlider = findViewById(R.id.slider);
+
+        mDemoSlider.setClipToOutline(true);
 
         HashMap<String,String> url_maps = new HashMap<>();
         url_maps.put("Banner 1", "https://image.shutterstock.com/image-photo/teacher-asking-question-her-class-450w-309241172.jpg");
@@ -183,7 +192,7 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         terms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SchoolDetailsActivity.this , ApplyTermsActivity.class );
+                Intent intent = new Intent(SchoolDetailsActivity.this , ComparisionActivity.class );
                 startActivity(intent);
             }
         });
@@ -204,30 +213,6 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
 
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
-
-    private void showMessage(String _s) {
-        Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
@@ -258,7 +243,7 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         MarkerOptions marker2 = new MarkerOptions().position(new LatLng(24.821367, 46.780950));
 
         // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest));
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90));
         marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.locationsocial));
 
         // Add a marker in Sydney and move the camera
@@ -272,5 +257,82 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney2));
 
         googleMap.animateCamera( CameraUpdateFactory.zoomTo( 10.0f ));
+    }
+
+    public void init_persistent_bottomsheet() {
+
+        View persistentbottomSheet = coordinatorLayout.findViewById(R.id.bottomsheet);
+        iv_trigger = persistentbottomSheet.findViewById(R.id.iv_fab);
+        final BottomSheetBehavior behavior = BottomSheetBehavior.from(persistentbottomSheet);
+
+        logo = persistentbottomSheet.findViewById(R.id.logo);
+
+        schoolname = persistentbottomSheet.findViewById(R.id.name);
+        cityname = persistentbottomSheet.findViewById(R.id.citytext);
+
+        if(language==1)
+        {
+
+        }else
+            {
+                schoolname.setText("El-Amaal Language School");
+                cityname.setText("ElMonsyaa City | Riyadh");
+            }
+
+        male = persistentbottomSheet.findViewById(R.id.male);
+        female = persistentbottomSheet.findViewById(R.id.female);
+        sun = persistentbottomSheet.findViewById(R.id.sun);
+        moon = persistentbottomSheet.findViewById(R.id.moon);
+        acsw = persistentbottomSheet.findViewById(R.id.acsw);
+
+        iv_trigger.setOnClickListener(this);
+
+        iv_trigger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else {
+                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+            }
+        });
+
+
+        if (behavior != null)
+            behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+                @Override
+                public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                    //showing the different states
+                    switch (newState) {
+                        case BottomSheetBehavior.STATE_HIDDEN:
+                            break;
+                        case BottomSheetBehavior.STATE_EXPANDED:
+                            break;
+                        case BottomSheetBehavior.STATE_COLLAPSED:
+                            break;
+                        case BottomSheetBehavior.STATE_DRAGGING:
+                            break;
+                        case BottomSheetBehavior.STATE_SETTLING:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                    // React to dragging events
+
+                }
+            });
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId() == R.id.iv_fab)
+        {
+            //show
+        }
     }
 }

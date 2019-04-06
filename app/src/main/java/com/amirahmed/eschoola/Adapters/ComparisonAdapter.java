@@ -58,51 +58,51 @@ public class ComparisonAdapter extends RecyclerView.Adapter<ComparisonAdapter.Co
 
         if(position==0)
         {
-            Glide.with(context).load(R.drawable.distancecomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.distance_yellow_90x90).into(holder.icon);
         }else if(position==1)
         {
-            Glide.with(context).load(R.drawable.capcomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.grade_level_yellow_90x90).into(holder.icon);
         }else if(position==2)
         {
-            Glide.with(context).load(R.drawable.boysgirlscomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.gender_yellow_90x90).into(holder.icon);
         }
         else if(position==3)
         {
-            Glide.with(context).load(R.drawable.districtcomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.district_yellow_90x90).into(holder.icon);
         }
         else if(position==4)
         {
-            Glide.with(context).load(R.drawable.timecomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.time_yellow_90x90).into(holder.icon);
         }else if(position==5)
         {
-            Glide.with(context).load(R.drawable.educationcomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.books_yellow_90x90).into(holder.icon);
         }else if(position==6)
         {
-            Glide.with(context).load(R.drawable.certifiedcom).into(holder.icon);
+            Glide.with(context).load(R.drawable.certification_yellow_90x90).into(holder.icon);
         }else if(position==7)
         {
-            Glide.with(context).load(R.drawable.studentscomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.average_student_yellow_90x90).into(holder.icon);
         }else if(position==8)
         {
-            Glide.with(context).load(R.drawable.pitchescomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.pitch_yellow_90x90).into(holder.icon);
         }else if(position==9)
         {
-            Glide.with(context).load(R.drawable.poolcomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.pool_yellow_90x90).into(holder.icon);
         }else if(position==10)
         {
-            Glide.with(context).load(R.drawable.educationcomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.books_yellow_90x90).into(holder.icon);
         }else if(position==11)
         {
-            Glide.with(context).load(R.drawable.onlineappcom).into(holder.icon);
+            Glide.with(context).load(R.drawable.online_registration_yellow_90x90).into(holder.icon);
         }else if(position==12)
         {
-            Glide.with(context).load(R.drawable.discountcom).into(holder.icon);
+            Glide.with(context).load(R.drawable.discount_yellow_90x90).into(holder.icon);
         }else if(position==13)
         {
-            Glide.with(context).load(R.drawable.groupscom).into(holder.icon);
+            Glide.with(context).load(R.drawable.group_discount_yellow_90x90).into(holder.icon);
         }else
         {
-            Glide.with(context).load(R.drawable.moneycomp).into(holder.icon);
+            Glide.with(context).load(R.drawable.cash_yellow_90x90).into(holder.icon);
         }
 
 

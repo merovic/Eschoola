@@ -147,8 +147,8 @@
         android:visibility="visible"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <com.amirahmed.eschoola.Utiles.TextViewWithFont
         android:id="@+id/textnull"

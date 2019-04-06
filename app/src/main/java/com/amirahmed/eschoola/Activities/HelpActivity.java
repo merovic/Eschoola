@@ -8,14 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.*;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class HelpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -57,12 +56,8 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("المساعدة");
-
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("المساعدة");
-
-            getActionBarTextView().setText("المساعدة");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,18 +66,16 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }else
         {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Help");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Help");
 
-            getActionBarTextView().setText("Help");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,12 +85,10 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }
 
         sp = findViewById(R.id.requests);
-
-
 
         details = findViewById(R.id.details);
         send = findViewById(R.id.sendbutton);
@@ -150,26 +141,26 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
                 {
                     if(sp.getSelectedItemPosition()==1)
                     {
-                        showMessage("تم الارسال الاستفسار بنجاح");
+                       new MyUtilFile(HelpActivity.this).showMessage("تم الارسال الاستفسار بنجاح");
                     }else if(sp.getSelectedItemPosition()==2)
                     {
-                        showMessage("تم الارسال المشكلة بنجاح");
+                        new MyUtilFile(HelpActivity.this).showMessage("تم الارسال المشكلة بنجاح");
                     }else
                         {
-                            showMessage("تم الارسال الاقتراح بنجاح");
+                            new MyUtilFile(HelpActivity.this).showMessage("تم الارسال الاقتراح بنجاح");
                         }
 
                 }else
                     {
                         if(sp.getSelectedItemPosition()==1)
                         {
-                            showMessage("Enquiry Sent Successfully");
+                            new MyUtilFile(HelpActivity.this).showMessage("Enquiry Sent Successfully");
                         }else if(sp.getSelectedItemPosition()==2)
                         {
-                            showMessage("Problem Sent Successfully");
+                            new MyUtilFile(HelpActivity.this).showMessage("Problem Sent Successfully");
                         }else
                         {
-                            showMessage("Suggestion Sent Successfully");
+                            new MyUtilFile(HelpActivity.this).showMessage("Suggestion Sent Successfully");
                         }
 
                     }
@@ -179,31 +170,6 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    private void showMessage(String _s) {
-        Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_LONG).show();
-    }
-
-
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

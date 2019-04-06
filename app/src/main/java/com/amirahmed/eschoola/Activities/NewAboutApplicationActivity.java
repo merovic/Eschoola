@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.codemybrainsout.ratingdialog.RatingDialog;
 
@@ -66,12 +67,10 @@ public class NewAboutApplicationActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("عن التطبيق");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("عن التطبيق");
 
-            getActionBarTextView().setText("عن التطبيق");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,17 +79,15 @@ public class NewAboutApplicationActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         } else {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("About Application");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("About Application");
 
-            getActionBarTextView().setText("About Application");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,7 +97,7 @@ public class NewAboutApplicationActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             aboutlayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             termslayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
@@ -247,25 +244,6 @@ public class NewAboutApplicationActivity extends AppCompatActivity {
 
 
 
-    }
-
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
     }
 
 }

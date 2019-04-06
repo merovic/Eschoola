@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.amirahmed.eschoola.Adapters.SchoolCalAdapter;
 import com.amirahmed.eschoola.Models.SchoolEvent;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
@@ -99,28 +100,18 @@ public class SchoolCalenderActivity extends AppCompatActivity {
         umblayout = findViewById(R.id.umblayout);
         umbtext = findViewById(R.id.umbtext);
 
+
         if(language==1)
         {
+
             umblayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             umbtext.setText("العطلات الرسمية");
 
-        }else
-            {
-                umblayout.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                umbtext.setText("Official Vacation");
-            }
-
-        if(language==1)
-        {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("التقويم الدراسى");
-
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("التقويم الدراسى");
-
-            getActionBarTextView().setText("التقويم الدراسى");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -129,18 +120,18 @@ public class SchoolCalenderActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }else
         {
+
+            umblayout.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+            umbtext.setText("Official Vacation");
+
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Calendar");
-
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Calendar");
-
-            getActionBarTextView().setText("Calendar");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -150,7 +141,7 @@ public class SchoolCalenderActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }
 
 
@@ -594,27 +585,6 @@ public class SchoolCalenderActivity extends AppCompatActivity {
         });
 
 
-    }
-
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
     }
 
 

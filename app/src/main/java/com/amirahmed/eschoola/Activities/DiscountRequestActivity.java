@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.bumptech.glide.Glide;
 
@@ -148,12 +149,10 @@ public class DiscountRequestActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("طلب تسجيل");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("طلب تسجيل");
 
-            getActionBarTextView().setText("طلب تسجيل");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -162,7 +161,7 @@ public class DiscountRequestActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             levelslist.add("اختر المرحلة التعليمية");
 
@@ -183,12 +182,10 @@ public class DiscountRequestActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Registration Request");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Registration Request");
 
-            getActionBarTextView().setText("Registration Request");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -198,7 +195,7 @@ public class DiscountRequestActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             container.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
@@ -274,25 +271,5 @@ public class DiscountRequestActivity extends AppCompatActivity {
 
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 
 }

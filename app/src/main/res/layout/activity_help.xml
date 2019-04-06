@@ -84,7 +84,6 @@
                 android:textColor="#FFF"
                 android:layout_margin="16dp"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:background="@drawable/roundedfill"/>
 
     </LinearLayout>

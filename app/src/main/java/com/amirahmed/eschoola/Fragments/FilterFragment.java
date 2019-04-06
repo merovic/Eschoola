@@ -1,5 +1,6 @@
 package com.amirahmed.eschoola.Fragments;
 
+import android.annotation.SuppressLint;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,12 +17,12 @@ import android.widget.TextView;
 
 
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MySpinnerAdapter;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.bumptech.glide.Glide;
 
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
-import org.florescu.android.rangeseekbar.RangeSeekBar;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
@@ -30,12 +31,11 @@ import java.util.List;
 public class FilterFragment extends DialogFragment {
 
     SeekBar seekBar1;
-    RangeSeekBar seekBar2;
     TextView max1,max2,min2,boy,girl,multi,feestext;
 
     ImageView boypic,girlpic,multipic;
 
-    LinearLayout mainlayout,typelayout,arealayout,citylayout,courselayout,sub1,sub2,sub3,sub4,multilayout,boyslayout,girlslayout;
+    LinearLayout mainlayout,typelayout,arealayout,citylayout,courselayout,sub1,sub2,sub3,sub4,multilayout,boyslayout,girlslayout,rangelayout;
 
     Button sendbutton;
 
@@ -82,9 +82,9 @@ public class FilterFragment extends DialogFragment {
         multilayout = rootView.findViewById(R.id.multilayout);
         boyslayout = rootView.findViewById(R.id.boyslayout);
         girlslayout = rootView.findViewById(R.id.girlslayout);
+        rangelayout = rootView.findViewById(R.id.rangelayout);
 
         seekBar1 = rootView.findViewById(R.id.distanceseeker);
-        seekBar2 = rootView.findViewById(R.id.feesseeker);
 
         rangeSeekbar = rootView.findViewById(R.id.rangeSeekbar1);
 
@@ -96,6 +96,8 @@ public class FilterFragment extends DialogFragment {
 
         if(language==1)
         {
+
+            rangelayout.setRotation(180);
 
             types.add("نوع المدرسة");
             types.add("عالمية");
@@ -123,7 +125,6 @@ public class FilterFragment extends DialogFragment {
         }else
             {
                 seekBar1.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-                seekBar2.setRotation(180);
 
                 boy.setText("Boys");
                 girl.setText("Girls");
@@ -171,9 +172,10 @@ public class FilterFragment extends DialogFragment {
                 cites.add("Sehafa");
             }
 
+
         typesspinner = rootView.findViewById(R.id.type);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, types);
+        MySpinnerAdapter adapter = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, types);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typesspinner.setAdapter(adapter);
@@ -184,7 +186,7 @@ public class FilterFragment extends DialogFragment {
 
         coursesspinner = rootView.findViewById(R.id.course);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, courses);
+        MySpinnerAdapter adapter2 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, courses);
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         coursesspinner.setAdapter(adapter2);
@@ -195,7 +197,7 @@ public class FilterFragment extends DialogFragment {
 
         areaspinner = rootView.findViewById(R.id.area);
 
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, areas);
+        MySpinnerAdapter adapter3 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, areas);
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         areaspinner.setAdapter(adapter3);
@@ -206,7 +208,7 @@ public class FilterFragment extends DialogFragment {
 
         cityspinner = rootView.findViewById(R.id.city);
 
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, cites);
+        MySpinnerAdapter adapter4 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, cites);
 
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cityspinner.setAdapter(adapter4);
@@ -240,40 +242,35 @@ public class FilterFragment extends DialogFragment {
         });
 
 
-        seekBar2.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener() {
-            @Override
-            public void onRangeSeekBarValuesChanged(RangeSeekBar bar, Object minValue, Object maxValue) {
-
-                Number min_value = bar.getSelectedMinValue();
-                Number max_value = bar.getSelectedMaxValue();
-
-                int min = (int)min_value;
-                int max = (int)max_value;
-
-                min2.setText(String.valueOf(min));
-                max2.setText(String.valueOf(max));
-
-            }
-        });
-
         rangeSeekbar.setOnRangeSeekbarChangeListener(new OnRangeSeekbarChangeListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void valueChanged(Number minValue, Number maxValue) {
-                max2.setText(String.valueOf(minValue));
-                min2.setText(String.valueOf(maxValue));
+                if(language==1)
+                {
+                    max2.setText(String.valueOf(minValue) + " ر.س");
+                    min2.setText(String.valueOf(maxValue) + " ر.س");
+                }else
+                    {
+                        max2.setText(String.valueOf(minValue) + " S.R");
+                        min2.setText(String.valueOf(maxValue) + " S.R");
+                    }
+
+
+
             }
         });
 
         boyslayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Glide.with(getActivity()).load(R.drawable.boyblue).into(boypic);
+                Glide.with(getActivity()).load(R.drawable.boys_90x90).into(boypic);
                 boy.setTextColor(getResources().getColor(R.color.myPrimaryDarkColor));
 
-                Glide.with(getActivity()).load(R.drawable.girl).into(girlpic);
+                Glide.with(getActivity()).load(R.drawable.girls_gray_90x90).into(girlpic);
                 girl.setTextColor(getResources().getColor(R.color.grey_400));
 
-                Glide.with(getActivity()).load(R.drawable.boygirl).into(multipic);
+                Glide.with(getActivity()).load(R.drawable.multipe_both_gray_90x90).into(multipic);
                 multi.setTextColor(getResources().getColor(R.color.grey_400));
             }
         });
@@ -281,13 +278,13 @@ public class FilterFragment extends DialogFragment {
         girlslayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Glide.with(getActivity()).load(R.drawable.boy).into(boypic);
+                Glide.with(getActivity()).load(R.drawable.boys_gray_90x90).into(boypic);
                 boy.setTextColor(getResources().getColor(R.color.grey_400));
 
-                Glide.with(getActivity()).load(R.drawable.girlblue).into(girlpic);
+                Glide.with(getActivity()).load(R.drawable.girls_90x90).into(girlpic);
                 girl.setTextColor(getResources().getColor(R.color.myPrimaryDarkColor));
 
-                Glide.with(getActivity()).load(R.drawable.boygirl).into(multipic);
+                Glide.with(getActivity()).load(R.drawable.multipe_both_gray_90x90).into(multipic);
                 multi.setTextColor(getResources().getColor(R.color.grey_400));
             }
         });
@@ -295,13 +292,13 @@ public class FilterFragment extends DialogFragment {
         multilayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Glide.with(getActivity()).load(R.drawable.boy).into(boypic);
+                Glide.with(getActivity()).load(R.drawable.boys_gray_90x90).into(boypic);
                 boy.setTextColor(getResources().getColor(R.color.grey_400));
 
-                Glide.with(getActivity()).load(R.drawable.girl).into(girlpic);
+                Glide.with(getActivity()).load(R.drawable.girls_gray_90x90).into(girlpic);
                 girl.setTextColor(getResources().getColor(R.color.grey_400));
 
-                Glide.with(getActivity()).load(R.drawable.boygirlblue).into(multipic);
+                Glide.with(getActivity()).load(R.drawable.multipe_both_90x90).into(multipic);
                 multi.setTextColor(getResources().getColor(R.color.myPrimaryDarkColor));
             }
         });

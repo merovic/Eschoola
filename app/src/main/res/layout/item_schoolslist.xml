@@ -46,11 +46,12 @@
 
                 <com.amirahmed.eschoola.Utiles.TextViewWithFont
                     android:id="@+id/name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="مدرسة الأمل للغات"
                     android:textSize="13sp"
                     android:layout_weight="1"
+                    android:maxLines="1"
                     android:textStyle="bold"
                     android:textColor="@color/myPrimaryDarkColor"
                     android:layout_marginRight="10dp"

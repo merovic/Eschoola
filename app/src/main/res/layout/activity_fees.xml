@@ -82,7 +82,7 @@
                         android:layout_height="16dp"
                         android:layout_margin="5dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/checkgreen"/>
+                        android:src="@drawable/artboard_90x90"/>
 
                     <View
                         android:layout_width="1dp"

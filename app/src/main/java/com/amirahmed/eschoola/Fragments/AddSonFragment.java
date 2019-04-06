@@ -1,5 +1,6 @@
 package com.amirahmed.eschoola.Fragments;
 
+import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,11 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.amirahmed.eschoola.Activities.DiscountRequestActivity;
+import com.amirahmed.eschoola.Activities.RegistrationActivity;
 import com.amirahmed.eschoola.R;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 
 public class AddSonFragment extends DialogFragment {
@@ -40,6 +45,8 @@ public class AddSonFragment extends DialogFragment {
     EditText nameEdit,birthdateEdit;
 
     Button submit;
+
+    Calendar myCalendar;
 
     @Nullable
     @Override
@@ -190,6 +197,38 @@ public class AddSonFragment extends DialogFragment {
 
         adapter4.notifyDataSetChanged();
 
+        myCalendar = Calendar.getInstance();
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+
+        birthdateEdit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(getActivity(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         return rootView;
+    }
+
+    private void updateLabel() {
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        birthdateEdit.setText(sdf.format(myCalendar.getTime()));
     }
 }

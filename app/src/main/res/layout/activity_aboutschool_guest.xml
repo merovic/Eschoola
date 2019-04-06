@@ -18,284 +18,376 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardElevation="20dp">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/headlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layoutDirection="rtl"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_bluecurve"
-            android:orientation="horizontal">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="20dp">
+
+            <LinearLayout
+                    android:id="@+id/headlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_bluecurve"
+                    android:orientation="horizontal">
 
 
 
                 <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/schoollogo"
-                    android:padding="1dp"
-                    android:background="@drawable/roundedgraynew"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"/>
+                        android:id="@+id/logo"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/schoollogo"
+                        android:padding="1dp"
+                        android:background="@drawable/roundedgraynew"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY"/>
 
+
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/schoolname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:layout_marginBottom="5dp"
+                            android:text="مدرسة العلم العالمية"/>
+
+
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/websitenew_blue_90x90"/>
+
+                        <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/linkedin_blue_90x90"/>
+
+                        <ImageView
+                                android:id="@+id/female"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/youtube_blue_90x90"/>
+
+                        <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/twitter_blue_90x90"/>
+
+                        <ImageView
+                                android:id="@+id/moon"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/insta_blue_90x90"/>
+
+                        <ImageView
+                                android:id="@+id/certificate"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/facebook_blue_90x90"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="20dp">
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_fill"
+                    android:gravity="center">
 
                 <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                    android:id="@+id/schoolname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:layout_marginBottom="5dp"
-                    android:text="مدرسة العلم العالمية"/>
+                        android:id="@+id/schoolfeatchures"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/myDrawerBackground"
+                        android:text="المرافق"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#D1D1D1"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"/>
 
 
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/myDrawerBackground"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/browser"/>
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/linkedinsocial"/>
-
-                    <ImageView
-                        android:id="@+id/female"
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/youtubesocial"/>
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/twittersocial"/>
-
-                    <ImageView
-                        android:id="@+id/moon"
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/instasocial"/>
-
-                    <ImageView
-                        android:id="@+id/certificate"
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/facebooksocial"/>
-
-                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        app:cardElevation="20dp">
+        </android.support.v7.widget.CardView>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                android:id="@+id/schoolfeatchures"
+        <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
                 android:layout_margin="10dp"
-                android:text="مميزات المدرسة"/>
+                app:cardElevation="20dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#D1D1D1"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"/>
-
-
-           <android.support.v7.widget.RecyclerView
-               android:id="@+id/rv"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:layout_margin="5dp"/>
-
-
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardElevation="20dp">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                android:id="@+id/statsticstext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
-                android:text="احصائيات عن المدرسة"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#D1D1D1"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_fill"
+                    android:gravity="center">
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/areaofschool"
-                        android:layout_width="wrap_content"
+                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        android:id="@+id/statsticstext"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
+                        android:textColor="@color/myDrawerBackground"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:textColor="#000"
-                        android:text="2300 متر"/>
-
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/size"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:layout_gravity="center"
-                        android:text="مساحة المدرسة"/>
-
-                </LinearLayout>
+                        android:layout_margin="10dp"
+                        android:text="احصائيات"/>
 
                 <View
-                    android:layout_width="0.5dp"
-                    android:layout_height="match_parent"
-                    android:background="#D1D1D1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#D1D1D1"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:text="20"/>
+                        android:paddingBottom="10dp"
+                        android:background="@color/myDrawerBackground"
+                        android:orientation="horizontal">
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/studentsno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:layout_gravity="center"
-                        android:text="الطلاب فى الفصل"/>
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                </LinearLayout>
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:id="@+id/areaofschool"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:text="2300 متر"/>
 
-                <View
-                    android:layout_width="0.5dp"
-                    android:layout_height="match_parent"
-                    android:background="#D1D1D1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"/>
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:id="@+id/size"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:layout_gravity="center"
+                                android:text="مساحة المدرسة"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    </LinearLayout>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:text="400"/>
+                    <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#D1D1D1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/studentsaverage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:layout_gravity="center"
-                        android:text="متوسط عدد الطلاب"/>
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:text="20"/>
+
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:id="@+id/studentsno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:layout_gravity="center"
+                                android:text="الطلاب فى الفصل"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#D1D1D1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:text="400"/>
+
+                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                                android:id="@+id/studentsaverage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:layout_gravity="center"
+                                android:text="متوسط عدد الطلاب"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-    </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="20dp">
 
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_fill"
+                    android:orientation="vertical">
+
+                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        android:id="@+id/termstext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/myDrawerBackground"
+                        android:layout_margin="10dp"
+                        android:text="شروط القبول"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#D1D1D1"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:background="@color/myDrawerBackground">
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/term1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Pass Application Exam"/>
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/term2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Pass English Exam"/>
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/term3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Pass an Interview"/>
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/term4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Achieve Full Mark in Behavior Exam"/>
+
+                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                            android:id="@+id/term5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Already has V.Good at Least"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>
 
 
 </LinearLayout>

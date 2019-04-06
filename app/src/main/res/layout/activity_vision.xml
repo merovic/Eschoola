@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +37,6 @@
             android:orientation="horizontal">
 
 
-
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="70dp"
@@ -44,8 +46,6 @@
                     android:background="@drawable/roundedgraynew"
                     android:layout_margin="10dp"
                     android:scaleType="fitXY"/>
-
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -119,172 +119,212 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/maincard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="ltr"
-        android:visibility="gone"
-        app:cardElevation="20dp">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <LinearLayout
+
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardElevation="20dp">
 
-            <LinearLayout
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                android:id="@+id/visiontext"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-                
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:orientation="vertical">
-                    
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/mangertext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textStyle="bold"
-                        android:text="كلمة المدير"/>
-                    
-                    <View
-                        android:id="@+id/mangerline"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_alignParentBottom="true"
-                        android:visibility="invisible"
-                        android:background="@color/myPrimaryDarkColor"/>
-                    
-                </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_fill"
+                android:padding="10dp"
+                android:textColor="@color/myDrawerBackground"
+                android:text="رؤية المدرسة"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:orientation="vertical">
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/messagetext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textStyle="bold"
-                        android:text="رسالتنا"/>
-
-                    <View
-                        android:id="@+id/messageline"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_alignParentBottom="true"
-                        android:visibility="invisible"
-                        android:background="@color/myPrimaryDarkColor"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:orientation="vertical">
-
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/goalstext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textStyle="bold"
-                        android:text="اهدافنا"/>
-
-                    <View
-                        android:id="@+id/goalsline"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_alignParentBottom="true"
-                        android:visibility="invisible"
-                        android:background="@color/myPrimaryDarkColor"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:orientation="vertical">
-
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                        android:id="@+id/visiontext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textStyle="bold"
-                        android:text="رؤيتنا"/>
-
-                    <View
-                        android:id="@+id/visionline"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/myPrimaryDarkColor"/>
-
-                </RelativeLayout>
-                
-            </LinearLayout>
-
-            <View
+        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                android:id="@+id/visioncontent"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#D3D3D3"/>
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+        android:text="تخريج طالب قادر على التفاعل مع متطلبات العصر من خلال بيئة تربوية فعالة من المجتمع و للمجتمع
+الرسالة
+التعاون المثمر بين أعضاء هيئة التدريس
+لدعم الفعال من جانب المجتمع و أولياء الامور
+لتفعيل البناء للقيادة المدرسيه
+الاستمرارية فى التنمية المهنية للعاملين بالمدرسة
+توفير التكنولوجيا الحديثة لجميع المتعلمين
+المتابعة و التقويم المستمر لنتائج تحصيل المتعلمين
+تعديل وتهذيب السلوك الطلابي من خلال تفعيل المشاركة في لأنشطة"/>
+
+
+
+    </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardElevation="20dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont
-                android:id="@+id/maintext"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="18dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="تَتَطلـَّعُ مَدْرَسَة ُ النُّخْـبَـةِ النَّموْذَجيَّةِ إلى تـَنْشِئَةِ جيْل ٍ مُبْدِع ٍ وَواع ٍ فِكْريًّا، وَمُتَمَيِّز ٍ أخْلاقِيًّا وعِلمِيًّا ، ومُؤْمِن ٍ بقضايا أمَّتِهِ ووَطَنِهِ، ومُتفاعِل ٍ مَعَ قِيَم ِ المُجْتمَع ِ الفِلِسْطينيِّ الأصيلـَة، وقادِر ٍعَلى تَوْظيفِ التَّقَنيَّاتِ العِلمِيَّةِ والعَمَليَّةِ؛ لِيواكِبَ النَّهْضَة َ التِكْنولوجِيَّة َ الـَّتي تَسودُ العالَمَ أجْمَع."/>
+                    android:id="@+id/goalstext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_fill"
+                    android:padding="10dp"
+                    android:textColor="@color/myDrawerBackground"
+                    android:text="اهداف المدرسة"/>
+
+
+            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    android:id="@+id/goalscontent"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="تخريج طالب قادر على التفاعل مع متطلبات العصر من خلال بيئة تربوية فعالة من المجتمع و للمجتمع
+الرسالة
+التعاون المثمر بين أعضاء هيئة التدريس
+لدعم الفعال من جانب المجتمع و أولياء الامور
+لتفعيل البناء للقيادة المدرسيه
+الاستمرارية فى التنمية المهنية للعاملين بالمدرسة
+توفير التكنولوجيا الحديثة لجميع المتعلمين
+المتابعة و التقويم المستمر لنتائج تحصيل المتعلمين
+تعديل وتهذيب السلوك الطلابي من خلال تفعيل المشاركة في لأنشطة"/>
 
 
 
         </LinearLayout>
 
+
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardElevation="20dp">
 
-    <com.athbk.ultimatetablayout.UltimateTabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/myDrawerBackground"
-        app:tab_orientation="horizontal"
-        app:tab_style="sliding"
-        app:tab_position_icon="icon_left"
-        app:tab_under_line_color="@color/myPrimaryDarkColor"
-        app:tab_text_size="10"
-        app:tab_height_under_line="2dp"
-        app:tab_resource_font="fonts/DroidArabicKufi.ttf"
-        app:tab_width="100dp"
-        app:tab_height="50dp"
-        app:tab_badge="number"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    android:id="@+id/messagetext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_fill"
+                    android:padding="10dp"
+                    android:textColor="@color/myDrawerBackground"
+                    android:text="رسالة المدرسة"/>
 
+
+            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    android:id="@+id/messagecontent"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="تخريج طالب قادر على التفاعل مع متطلبات العصر من خلال بيئة تربوية فعالة من المجتمع و للمجتمع
+الرسالة
+التعاون المثمر بين أعضاء هيئة التدريس
+لدعم الفعال من جانب المجتمع و أولياء الامور
+لتفعيل البناء للقيادة المدرسيه
+الاستمرارية فى التنمية المهنية للعاملين بالمدرسة
+توفير التكنولوجيا الحديثة لجميع المتعلمين
+المتابعة و التقويم المستمر لنتائج تحصيل المتعلمين
+تعديل وتهذيب السلوك الطلابي من خلال تفعيل المشاركة في لأنشطة"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardElevation="20dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    android:id="@+id/mangertext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_fill"
+                    android:padding="10dp"
+                    android:textColor="@color/myDrawerBackground"
+                    android:text="كلمة مدير المدرسة"/>
+
+
+            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    android:id="@+id/mangercontent"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="تخريج طالب قادر على التفاعل مع متطلبات العصر من خلال بيئة تربوية فعالة من المجتمع و للمجتمع
+الرسالة
+التعاون المثمر بين أعضاء هيئة التدريس
+لدعم الفعال من جانب المجتمع و أولياء الامور
+لتفعيل البناء للقيادة المدرسيه
+الاستمرارية فى التنمية المهنية للعاملين بالمدرسة
+توفير التكنولوجيا الحديثة لجميع المتعلمين
+المتابعة و التقويم المستمر لنتائج تحصيل المتعلمين
+تعديل وتهذيب السلوك الطلابي من خلال تفعيل المشاركة في لأنشطة"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.amirahmed.eschoola.Activities;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.ComparisonAdapter;
@@ -14,11 +17,15 @@ import com.amirahmed.eschoola.Adapters.ReservationAdapter;
 import com.amirahmed.eschoola.Models.ComparisonItem;
 import com.amirahmed.eschoola.Models.ReservationItem;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 
 public class ReservationActivity extends AppCompatActivity {
@@ -54,12 +61,10 @@ public class ReservationActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("قائمة الحجوزات");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("قائمة الحجوزات");
 
-            getActionBarTextView().setText("قائمة الحجوزات");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,17 +73,15 @@ public class ReservationActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         } else {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Reservations");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Reservations");
 
-            getActionBarTextView().setText("Reservations");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -88,7 +91,7 @@ public class ReservationActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
         }
 
@@ -101,6 +104,8 @@ public class ReservationActivity extends AppCompatActivity {
 
         initializeData();
         initializeAdapter();
+
+
     }
 
     private void initializeData() {
@@ -121,22 +126,4 @@ public class ReservationActivity extends AppCompatActivity {
 
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

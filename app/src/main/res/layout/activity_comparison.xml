@@ -21,10 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layoutDirection="rtl"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="5dp"
@@ -34,6 +37,8 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/rounded_blueempty"
                 android:src="@drawable/schoollogo"/>
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont
@@ -51,10 +56,19 @@
             android:layout_height="wrap_content"
             android:src="@drawable/doublearrow"
             android:layout_gravity="center"
+            android:visibility="gone"
             android:rotation="90"/>
 
+        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/myPrimaryDarkColor"
+                android:text="مقارنة"/>
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="5dp"
@@ -64,6 +78,8 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/rounded_blueempty"
                 android:src="@drawable/schoollogo2"/>
 
             <com.amirahmed.eschoola.Utiles.TextViewWithFont

@@ -22,10 +22,9 @@
 
 			<ImageView
 					android:id="@+id/logo"
-					android:layout_width="35dp"
-					android:layout_height="35dp"
+					android:layout_width="60dp"
+					android:layout_height="60dp"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="10dp"
 					android:src="@mipmap/ic_launcher"/>
 
 			<com.amirahmed.eschoola.Utiles.TextViewWithFont
@@ -121,7 +120,8 @@
 						android:paddingLeft="5dp"
 						android:paddingRight="5dp"
 						android:textSize="16sp"
-						android:inputType="textEmailAddress"
+						android:inputType="none"
+						android:focusable="false"
 						android:background="@drawable/rounded_blueempty"/>
 
 			</LinearLayout>
@@ -267,7 +267,6 @@
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="16dp"
 					android:layout_marginRight="16dp"
-					android:layout_marginTop="5dp"
 					android:visibility="gone"
 					android:orientation="vertical">
 
@@ -275,6 +274,7 @@
 						android:id="@+id/titlelastschool"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:visibility="gone"
 						android:text="LAST SCHOOL"
 						android:textColor="@color/myPrimaryDarkColor"
 						android:layout_margin="5dp"/>

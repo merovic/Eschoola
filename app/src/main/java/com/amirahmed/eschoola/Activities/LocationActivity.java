@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -67,12 +68,10 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("الموقع");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("الموقع");
 
-            getActionBarTextView().setText("الموقع");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,18 +80,16 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
         }else
         {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Location");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Location");
 
-            getActionBarTextView().setText("Location");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -102,7 +99,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             container.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
@@ -143,24 +140,4 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

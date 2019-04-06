@@ -173,7 +173,7 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
             bottommenu.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             allschoolstext.setText("Main");
             newstext.setText("News");
-            culturetext.setText("Info");
+            culturetext.setText("News Feed");
             twotabslayout.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             schoolstext.setText("Schools");
             maptext.setText("Map");
@@ -375,6 +375,7 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
             mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar2);
         }
 
+        mNavigationDrawerFragment.closeDrawer();
 
         setupnews();
         setupculture();
@@ -471,19 +472,19 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
 
         if(position==0)
         {
-            Intent intent = new Intent(VisitorActivity.this , SchoolCalenderActivity.class);
+            Intent intent = new Intent(VisitorActivity.this , GuestProfileActivity.class);
             startActivity(intent);
         }else if (position==1)
         {
-            Intent intent = new Intent(VisitorActivity.this , FavoriteActivity.class);
+            Intent intent = new Intent(VisitorActivity.this , SchoolCalenderActivity.class);
             startActivity(intent);
         }else if (position==2)
         {
-            Intent intent = new Intent(VisitorActivity.this , ReservationActivity.class);
+            Intent intent = new Intent(VisitorActivity.this , FavoriteActivity.class);
             startActivity(intent);
         }else if (position==3)
         {
-            Intent intent = new Intent(VisitorActivity.this , GuestProfile.class);
+            Intent intent = new Intent(VisitorActivity.this , ReservationActivity.class);
             startActivity(intent);
         }else if (position==4)
         {
@@ -609,19 +610,19 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
         {
             schoolsListItems.add(new SchoolsListItem("مدرسة الأمل للغات","مفتوح من ٧ص - ٢م","١٥ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة المستقبل الحديثة","مفتوح من ٧ص - ٢م","٣٧ كم","دولية | جميع المراحل"));
-            schoolsListItems.add(new SchoolsListItem("مدرسة العهد للتعليم المتقدم","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
+            schoolsListItems.add(new SchoolsListItem("مدرسة العهد المتقدمة","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة الأمل للغات","مفتوح من ٧ص - ٢م","١٥ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة المستقبل الحديثة","مفتوح من ٧ص - ٢م","٣٧ كم","دولية | جميع المراحل"));
-            schoolsListItems.add(new SchoolsListItem("مدرسة العهد للتعليم المتقدم","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
+            schoolsListItems.add(new SchoolsListItem("مدرسة العهد المتقدمة","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة الأمل للغات","مفتوح من ٧ص - ٢م","١٥ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة المستقبل الحديثة","مفتوح من ٧ص - ٢م","٣٧ كم","دولية | جميع المراحل"));
-            schoolsListItems.add(new SchoolsListItem("مدرسة العهد للتعليم المتقدم","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
+            schoolsListItems.add(new SchoolsListItem("مدرسة العهد المتقدمة","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة الأمل للغات","مفتوح من ٧ص - ٢م","١٥ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة المستقبل الحديثة","مفتوح من ٧ص - ٢م","٣٧ كم","دولية | جميع المراحل"));
-            schoolsListItems.add(new SchoolsListItem("مدرسة العهد للتعليم المتقدم","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
+            schoolsListItems.add(new SchoolsListItem("مدرسة العهد المتقدمة","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة الأمل للغات","مفتوح من ٧ص - ٢م","١٥ كم","دولية | جميع المراحل"));
             schoolsListItems.add(new SchoolsListItem("مدرسة المستقبل الحديثة","مفتوح من ٧ص - ٢م","٣٧ كم","دولية | جميع المراحل"));
-            schoolsListItems.add(new SchoolsListItem("مدرسة العهد للتعليم المتقدم","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
+            schoolsListItems.add(new SchoolsListItem("مدرسة العهد المتقدمة","مفتوح من ٧ص - ٢م","٤٠ كم","دولية | جميع المراحل"));
         }else
             {
                 schoolsListItems.add(new SchoolsListItem("El Amal Modern School","Open from 7pm - 3am","15 KM","International | All Levels"));
@@ -744,19 +745,19 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
         MarkerOptions marker2 = new MarkerOptions().position(new LatLng(24.821367, 46.780950)).title("El-Hayaa School");
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(24.638007, 46.712315)).title(
-                "El-Eleem School").icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest))).showInfoWindow();
+                "El-Eleem School").icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90))).showInfoWindow();
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(24.821367, 46.780950)).title(
-                "El-Hayaa School").icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest))).showInfoWindow();
+                "El-Hayaa School").icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90))).showInfoWindow();
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(24.493124, 46.901809)).title(
-                "El-Amaal School").icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest))).showInfoWindow();
+                "El-Amaal School").icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90))).showInfoWindow();
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(25.009434, 46.495355))).showInfoWindow();
 
         // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest));
-        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.schoolguest));
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90));
+        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90));
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override

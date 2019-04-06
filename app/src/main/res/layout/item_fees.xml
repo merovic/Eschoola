@@ -148,7 +148,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/bus_one_way_90x90"/>
+                        android:src="@drawable/bus_one_way_blue_new_90x90"/>
 
                     <com.amirahmed.eschoola.Utiles.TextViewWithFont
                         android:id="@+id/bustext"
@@ -192,7 +192,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/bus_two_way_90x90"/>
+                        android:src="@drawable/bus_2_way_blue_90x90"/>
 
                     <com.amirahmed.eschoola.Utiles.TextViewWithFont
                         android:id="@+id/bus2text"

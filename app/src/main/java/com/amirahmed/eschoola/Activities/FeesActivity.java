@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.amirahmed.eschoola.Adapters.FeesTabsAdapter;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.athbk.ultimatetablayout.UltimateTabLayout;
 
@@ -70,12 +71,10 @@ public class FeesActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("المصروفات");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("المصروفات");
 
-            getActionBarTextView().setText("المصروفات");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,7 +83,7 @@ public class FeesActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             titles.add("المرحلة الثانوية");
             titles.add("المرحلة الأعدادية");
@@ -100,12 +99,10 @@ public class FeesActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Fees");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Fees");
 
-            getActionBarTextView().setText("Fees");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -115,7 +112,7 @@ public class FeesActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             container.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
@@ -158,24 +155,5 @@ public class FeesActivity extends AppCompatActivity {
 
     }
 
-
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 
 }

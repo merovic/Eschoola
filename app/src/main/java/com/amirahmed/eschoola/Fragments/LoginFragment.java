@@ -24,11 +24,11 @@ public class LoginFragment extends DialogFragment {
 
     int language;
 
-    LinearLayout mainlayout;
+    LinearLayout mainlayout,login;
 
-    TextView skiptext;
+    TextView skiptext,logintext,donthavetext,title;
 
-    Button reg,login;
+    Button reg;
 
     FancyButton facebookLogin,twitterLogin;
 
@@ -48,19 +48,27 @@ public class LoginFragment extends DialogFragment {
 
         skiptext = rootView.findViewById(R.id.skiptext);
 
+        logintext = rootView.findViewById(R.id.logintext);
+
+        title = rootView.findViewById(R.id.title);
+
+        donthavetext = rootView.findViewById(R.id.donthavetext);
+
         facebookLogin = rootView.findViewById(R.id.facebook_login);
         twitterLogin = rootView.findViewById(R.id.twitter_login);
 
         if(language==1)
         {
+            title.setText("أهلا بك فى أسكولا");
             reg.setText("تسجيل جديد");
-            login.setText("تسجيل الدخول");
+            logintext.setText("تسجيل الدخول عن طريق الأيميل");
             skiptext.setText("تخطى");
+            donthavetext.setText("ليس لديك حساب ؟");
 
             facebookLogin.setText("تسجيل الدخول عن طريق فيس بوك");
 
 
-            twitterLogin.setText("تسجيل الدخول عن طريق تويتر");
+            twitterLogin.setText("تسجيل الدخول عن طريق تويتر    ");
 
         }else
             {

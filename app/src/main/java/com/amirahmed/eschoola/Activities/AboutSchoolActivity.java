@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.SchoolFeathersAdapter;
 import com.amirahmed.eschoola.Models.SchoolsFeathersItem;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.bumptech.glide.Glide;
 
@@ -32,7 +33,7 @@ public class AboutSchoolActivity extends AppCompatActivity {
 
     LinearLayout header;
 
-    TextView schoolname,statsticstext,schoolfeatchures,studentsno,studentsaverage,size,areaofschool;
+    TextView schoolname,statsticstext,schoolfeatchures,studentsno,studentsaverage,size,areaofschool,termstext,term1,term2,term3,term4,term5;
 
 
     private RecyclerView mRecyclerView;
@@ -64,6 +65,12 @@ public class AboutSchoolActivity extends AppCompatActivity {
         studentsaverage = findViewById(R.id.studentsaverage);
         size = findViewById(R.id.size);
         areaofschool = findViewById(R.id.areaofschool);
+        term1 = findViewById(R.id.term1);
+        term2 = findViewById(R.id.term2);
+        term3 = findViewById(R.id.term3);
+        term4 = findViewById(R.id.term4);
+        term5 = findViewById(R.id.term5);
+        termstext = findViewById(R.id.termstext);
 
         mRecyclerView = findViewById(R.id.rv);
 
@@ -77,12 +84,10 @@ public class AboutSchoolActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("عن المدرسة");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("عن المدرسة");
 
-            getActionBarTextView().setText("عن المدرسة");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,17 +96,22 @@ public class AboutSchoolActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
+
+            term1.setText("أجتياز اختبار اللغة الأنجليزية");
+            term2.setText("أجتياز اختبارات القبول");
+            term3.setText("أجتياو المقابلة الشخصية");
+            term4.setText("حصول على درجة كاملة فى السلوك");
+            term5.setText("اخر تقدير جيد جدا على الأقل");
+
         } else {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("About School");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("About School");
 
-            getActionBarTextView().setText("About School");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,7 +121,7 @@ public class AboutSchoolActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             header.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
@@ -121,6 +131,7 @@ public class AboutSchoolActivity extends AppCompatActivity {
             studentsno.setText("Students in Class");
             studentsaverage.setText("Average Number");
             size.setText("School Size");
+            termstext.setText("Apply Terms");
             areaofschool.setText("2300 Meter");
 
 
@@ -149,22 +160,4 @@ public class AboutSchoolActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(adapter);
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if (language == 1) {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            } else {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }

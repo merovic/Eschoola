@@ -1,6 +1,9 @@
 package com.amirahmed.eschoola.Activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,16 +12,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.widget.*;
 import com.amirahmed.eschoola.Adapters.SonsSelectionAdapter;
 import com.amirahmed.eschoola.Models.SonItem;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 import com.bumptech.glide.Glide;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class ReserveRequestActivity extends AppCompatActivity {
 
@@ -38,7 +46,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
 
     TextView to;
 
-    LinearLayout container,sonlayout,nosonlayout;
+    LinearLayout container,sonlayout,nosonlayout,lastlayout;
 
     CheckBox lastschoolcheck,uniformcheck,bookscheck,busonewaycheck,bustwowaycheck,cashcheck,visacheck,discountcheck;
 
@@ -48,6 +56,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
 
     Button submitbutton;
 
+    Calendar myCalendar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,10 +80,11 @@ public class ReserveRequestActivity extends AppCompatActivity {
         container = findViewById(R.id.container);
         sonlayout = findViewById(R.id.sonlayout);
         nosonlayout = findViewById(R.id.nosonlayout);
+        lastlayout = findViewById(R.id.lastlayout);
 
-        lastschoolcheck = findViewById(R.id.books);
+        lastschoolcheck = findViewById(R.id.lastschoolcheck);
         uniformcheck = findViewById(R.id.uniform);
-        bookscheck = findViewById(R.id.lastschoolcheck);
+        bookscheck = findViewById(R.id.books);
         busonewaycheck = findViewById(R.id.busoneway);
         bustwowaycheck = findViewById(R.id.bustwoway);
         cashcheck = findViewById(R.id.cash);
@@ -97,12 +107,9 @@ public class ReserveRequestActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("حجز جديد");
-
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("حجز جديد");
 
-            getActionBarTextView().setText("حجز جديد");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,40 +118,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
-
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-
-                    if (!isFinishing()){
-                        new AlertDialog.Builder(ReserveRequestActivity.this)
-                                .setTitle("أختر اولا")
-                                .setMessage("هل قمت بتسجيل أبنك على تطبيق سكولا ؟")
-                                .setCancelable(false)
-                                .setPositiveButton("نعم", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        nosonlayout.setVisibility(View.GONE);
-                                        rv.setVisibility(View.VISIBLE);
-                                        sonlayout.setVisibility(View.VISIBLE);
-                                        dialog.cancel();
-                                    }
-                                })
-
-                                .setNegativeButton(
-                                        "لا",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int id) {
-                                                nosonlayout.setVisibility(View.VISIBLE);
-                                                rv.setVisibility(View.GONE);
-                                                sonlayout.setVisibility(View.GONE);
-                                                dialog.cancel();
-                                            }
-                                        }).show();
-                    }
-                }
-            });
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             container.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 
@@ -182,12 +156,9 @@ public class ReserveRequestActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Reservation");
-
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Reservation");
 
-            getActionBarTextView().setText("Reservation");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -197,7 +168,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             genderlist.add("Select Gender");
             genderlist.add("Male");
@@ -207,39 +178,6 @@ public class ReserveRequestActivity extends AppCompatActivity {
             lastslist.add("El-Amaal School");
             lastslist.add("El-Hayaa School");
             lastslist.add("El-Mostakbal School");
-
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-
-                    if (!isFinishing()){
-                        new AlertDialog.Builder(ReserveRequestActivity.this)
-                                .setTitle("Choose First")
-                                .setMessage("Do you already add your son on schoola ?")
-                                .setCancelable(false)
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        nosonlayout.setVisibility(View.GONE);
-                                        rv.setVisibility(View.VISIBLE);
-                                        sonlayout.setVisibility(View.VISIBLE);
-                                        dialog.cancel();
-                                    }
-                                })
-
-                                .setNegativeButton(
-                                        "No",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int id) {
-                                                nosonlayout.setVisibility(View.VISIBLE);
-                                                rv.setVisibility(View.GONE);
-                                                sonlayout.setVisibility(View.GONE);
-                                                dialog.cancel();
-                                            }
-                                        }).show();
-                    }
-                }
-            });
 
         }
 
@@ -272,6 +210,94 @@ public class ReserveRequestActivity extends AppCompatActivity {
         initializeData();
         initializeAdapter();
 
+        lastschoolcheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    lastlayout.setVisibility(View.VISIBLE);
+                }else
+                    {
+                        lastlayout.setVisibility(View.GONE);
+                    }
+            }
+        });
+
+        busonewaycheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    bustwowaycheck.setChecked(false);
+                }
+            }
+        });
+
+        bustwowaycheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    busonewaycheck.setChecked(false);
+                }
+            }
+        });
+
+        cashcheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    visacheck.setChecked(false);
+                }
+            }
+        });
+
+        visacheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    cashcheck.setChecked(false);
+                }
+            }
+        });
+
+        myCalendar = Calendar.getInstance();
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+
+        birthdate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(ReserveRequestActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        ViewDialog alert = new ViewDialog();
+        alert.showDialog(this);
+
+    }
+
+    private void updateLabel() {
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        birthdate.setText(sdf.format(myCalendar.getTime()));
     }
 
     private void initializeData() {
@@ -299,26 +325,51 @@ public class ReserveRequestActivity extends AppCompatActivity {
 
     }
 
+    public class ViewDialog {
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
+        void showDialog(Activity activity){
+            final Dialog dialog = new Dialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.dialog);
 
-        try {
+            TextView title0 = dialog.findViewById(R.id.title);
+
+            TextView title = dialog.findViewById(R.id.titledialog);
+
+            Button yes = dialog.findViewById(R.id.yesbutton);
+            yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    nosonlayout.setVisibility(View.GONE);
+                    rv.setVisibility(View.VISIBLE);
+                    sonlayout.setVisibility(View.VISIBLE);
+                    dialog.dismiss();
+                }
+            });
+
+            Button no = dialog.findViewById(R.id.nobutton);
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    nosonlayout.setVisibility(View.VISIBLE);
+                    rv.setVisibility(View.GONE);
+                    sonlayout.setVisibility(View.GONE);
+                    dialog.dismiss();
+                }
+            });
+
             if(language==1)
             {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
+                title0.setText("أضافة أبن");
+                title.setText("هل قمت بتسجيل إبنك على تطبيق إسكولا من قبل ؟");
+                yes.setText("نعم");
+                no.setText("لا");
             }
 
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
+            dialog.show();
+
         }
-        return titleTextView;
     }
 
 }

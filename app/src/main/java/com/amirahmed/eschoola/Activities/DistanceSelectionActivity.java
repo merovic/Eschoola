@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
+import com.amirahmed.eschoola.Utiles.MyUtilFile;
 import com.amirahmed.eschoola.Utiles.TinyDB;
 
 
@@ -45,7 +46,6 @@ public class DistanceSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_distance);
 
-
         tinyDB = new TinyDB(getApplicationContext());
 
         language = tinyDB.getInt("language");
@@ -73,12 +73,10 @@ public class DistanceSelectionActivity extends AppCompatActivity {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);
 
-            mToolbar.setTitle("الاعدادات");
 
             TextView textView = mToolbar.findViewById(R.id.toolbartext);
             textView.setText("الاعدادات");
 
-            getActionBarTextView().setText("الاعدادات");
 
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -88,7 +86,7 @@ public class DistanceSelectionActivity extends AppCompatActivity {
                 }
             });
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             distancelist.add("كم");
             distancelist.add("ميل");
@@ -98,12 +96,10 @@ public class DistanceSelectionActivity extends AppCompatActivity {
             mToolbar2.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.GONE);
 
-            mToolbar2.setTitle("Setting");
 
             TextView textView = mToolbar2.findViewById(R.id.toolbartext);
             textView.setText("Setting");
 
-            getActionBarTextView().setText("Setting");
 
             arrowen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -113,7 +109,7 @@ public class DistanceSelectionActivity extends AppCompatActivity {
             });
 
 
-            getActionBarTextView().setVisibility(View.GONE);
+            new MyUtilFile(language,mToolbar,mToolbar2).getActionBarTextView().setVisibility(View.GONE);
 
             layout1.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             layout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
@@ -160,24 +156,4 @@ public class DistanceSelectionActivity extends AppCompatActivity {
         });
     }
 
-    private TextView getActionBarTextView() {
-        TextView titleTextView = null;
-
-        try {
-            if(language==1)
-            {
-                Field f = mToolbar.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar);
-            }else
-            {
-                Field f = mToolbar2.getClass().getDeclaredField("mTitleTextView");
-                f.setAccessible(true);
-                titleTextView = (TextView) f.get(mToolbar2);
-            }
-
-        } catch (NoSuchFieldException | IllegalAccessException ignored) {
-        }
-        return titleTextView;
-    }
 }
