@@ -1,8 +1,6 @@
 package com.amirahmed.eschoola.Activities;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,8 +10,8 @@ import android.widget.TextView;
 
 
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,10 +19,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.lang.reflect.Field;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback {
 

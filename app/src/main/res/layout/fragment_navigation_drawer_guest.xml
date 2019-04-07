@@ -45,7 +45,7 @@
         android:scrollbars="vertical"
         android:focusable="true" />
 
-    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+    <com.amirahmed.eschoola.Utils.TextViewWithFont
         android:id="@+id/title1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_margin="10dp"
             android:src="@drawable/language_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             android:layout_margin="10dp"
             android:src="@drawable/notification_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
             android:layout_margin="10dp"
             android:src="@drawable/distance_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
 
     </LinearLayout>
 
-    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+    <com.amirahmed.eschoola.Utils.TextViewWithFont
         android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -185,7 +185,7 @@
             android:layout_margin="10dp"
             android:src="@drawable/contactus_60x60"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
             android:layout_margin="10dp"
             android:src="@drawable/aboutus_60x60"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

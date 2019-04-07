@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.amirahmed.eschoola.Models.NavigationItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.NavigationDrawerCallbacks;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.NavigationDrawerCallbacks;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.util.List;
 

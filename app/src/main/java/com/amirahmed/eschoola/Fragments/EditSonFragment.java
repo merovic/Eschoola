@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.util.ArrayList;
 import java.util.List;

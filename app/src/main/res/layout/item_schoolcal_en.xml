@@ -20,7 +20,7 @@
             android:padding="10dp"
             android:orientation="vertical">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
                 android:textColor="@color/myPrimaryColor"
                 android:text="19"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:padding="10dp"
             android:orientation="vertical">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:textStyle="bold"
                 android:text="عيد العمال"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/datehijry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

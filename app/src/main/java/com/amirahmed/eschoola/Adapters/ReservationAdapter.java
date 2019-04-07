@@ -13,8 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.amirahmed.eschoola.Models.ReservationItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-import com.bumptech.glide.Glide;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.util.List;
 

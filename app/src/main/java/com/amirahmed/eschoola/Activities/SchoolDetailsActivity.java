@@ -1,7 +1,6 @@
 package com.amirahmed.eschoola.Activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,8 +13,8 @@ import android.widget.*;
 
 
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -29,9 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class SchoolDetailsActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,OnMapReadyCallback, View.OnClickListener {
 

@@ -27,7 +27,7 @@
 					android:layout_centerVertical="true"
 					android:src="@mipmap/ic_launcher"/>
 
-			<com.amirahmed.eschoola.Utiles.TextViewWithFont
+			<com.amirahmed.eschoola.Utils.TextViewWithFont
 					android:id="@+id/title"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
 					android:layout_marginRight="16dp"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlename"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
 					android:layout_marginTop="8dp"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlebirthdate"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
 					android:layout_marginTop="8dp"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlegender"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
 					android:layout_marginTop="8dp"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlestage"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -219,7 +219,7 @@
 					android:layout_marginTop="8dp"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlelevel"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -270,7 +270,7 @@
 					android:visibility="gone"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utiles.TextViewWithFont
+				<com.amirahmed.eschoola.Utils.TextViewWithFont
 						android:id="@+id/titlelastschool"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"

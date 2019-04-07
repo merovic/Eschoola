@@ -22,7 +22,7 @@ android:background="@drawable/rounded_bluecurve">
 				  android:layout_weight="1"
 				  android:orientation="vertical">
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/sonname"
 				android:layout_width="wrap_content"
 														android:layout_height="wrap_content"
@@ -32,7 +32,7 @@ android:background="@drawable/rounded_bluecurve">
 														android:textColor="@color/myPrimaryDarkColor"
 		android:text="Layla Asfer"/>
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/sonlevel"
 				android:layout_width="wrap_content"
 														android:layout_height="wrap_content"

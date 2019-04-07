@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Activities.NewsDetailsActivity;
 import com.amirahmed.eschoola.Models.NewsItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

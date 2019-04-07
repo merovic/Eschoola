@@ -1,8 +1,6 @@
 package com.amirahmed.eschoola.Adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.amirahmed.eschoola.Fragments.EditSonFragment;
 import com.amirahmed.eschoola.Models.SonItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-import com.bumptech.glide.Glide;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.util.List;
 

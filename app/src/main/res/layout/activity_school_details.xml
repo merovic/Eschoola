@@ -138,7 +138,7 @@
 							android:layout_gravity="center"
 							android:src="@drawable/vision_90x90"/>
 
-					<com.amirahmed.eschoola.Utiles.TextViewWithFont
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
 							android:id="@+id/visiontext"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
 							android:layout_gravity="center"
 							android:src="@drawable/aboutschool_90x90"/>
 
-					<com.amirahmed.eschoola.Utiles.TextViewWithFont
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
 							android:id="@+id/abouttext"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
 							android:layout_gravity="center"
 							android:src="@drawable/tosandnotes_90x90"/>
 
-					<com.amirahmed.eschoola.Utiles.TextViewWithFont
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
 							android:id="@+id/termstext"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
 							android:layout_gravity="center"
 							android:src="@drawable/fee_90x90"/>
 
-					<com.amirahmed.eschoola.Utiles.TextViewWithFont
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
 							android:id="@+id/feestext"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"

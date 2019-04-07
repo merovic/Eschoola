@@ -1,5 +1,6 @@
-package com.amirahmed.eschoola.Utiles;
+package com.amirahmed.eschoola.Utils;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -8,6 +9,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 
+@SuppressLint("AppCompatCustomView")
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class TextViewWithFont extends TextView {
     public static Typeface tf;

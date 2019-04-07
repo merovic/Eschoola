@@ -1,4 +1,4 @@
-package com.amirahmed.eschoola.Utiles;
+package com.amirahmed.eschoola.Utils;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -3,7 +3,6 @@ package com.amirahmed.eschoola.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Activities.SchoolDetailsActivity;
 import com.amirahmed.eschoola.Models.SchoolsListItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.bumptech.glide.Glide;
 
 

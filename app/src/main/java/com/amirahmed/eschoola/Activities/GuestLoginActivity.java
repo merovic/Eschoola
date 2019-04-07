@@ -11,11 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-
-
-import java.lang.reflect.Field;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 public class GuestLoginActivity extends AppCompatActivity {
 

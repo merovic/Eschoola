@@ -8,11 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.*;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MySpinnerAdapter;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -123,7 +123,7 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnIte
 
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(HelpActivity.this, android.R.layout.simple_spinner_item, requests);
+        MySpinnerAdapter adapter = new MySpinnerAdapter(HelpActivity.this, android.R.layout.simple_spinner_item, requests);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(adapter);

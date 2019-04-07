@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Activities.GuestLoginActivity;
 import com.amirahmed.eschoola.Activities.RegistrationActivity;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class LoginFragment extends DialogFragment {

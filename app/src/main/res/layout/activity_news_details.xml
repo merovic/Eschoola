@@ -38,7 +38,7 @@
                 android:layoutDirection="rtl"
                 android:orientation="vertical">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                     android:textColor="#000"
                     android:textStyle="bold"/>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
 
             </LinearLayout>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -15,11 +15,9 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.SchoolFeathersAdapter;
 import com.amirahmed.eschoola.Models.SchoolsFeathersItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-import com.bumptech.glide.Glide;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 

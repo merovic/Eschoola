@@ -30,7 +30,7 @@
                 android:layout_gravity="center"
                 android:src="@drawable/weather_notifs_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_gravity="center"
                 android:src="@drawable/notification_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

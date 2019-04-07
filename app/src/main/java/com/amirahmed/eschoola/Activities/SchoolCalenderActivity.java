@@ -19,8 +19,8 @@ import android.widget.Toast;
 import com.amirahmed.eschoola.Adapters.SchoolCalAdapter;
 import com.amirahmed.eschoola.Models.SchoolEvent;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import net.danlew.android.joda.JodaTimeAndroid;
@@ -30,7 +30,6 @@ import org.joda.time.chrono.ISOChronology;
 import org.joda.time.chrono.IslamicChronology;
 
 import java.lang.reflect.Array;
-import java.lang.reflect.Field;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;

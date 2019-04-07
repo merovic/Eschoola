@@ -36,7 +36,7 @@
                     android:layout_margin="5dp"
                     android:src="@drawable/cash_yellow_90x90"/>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/pointcomparison"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -61,7 +61,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/point1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -77,7 +77,7 @@
                     android:background="#D3D3D3"/>
 
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/point2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

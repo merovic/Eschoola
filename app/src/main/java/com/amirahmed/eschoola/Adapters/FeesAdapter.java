@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.amirahmed.eschoola.Activities.DiscountRequestActivity;
 import com.amirahmed.eschoola.Activities.ReserveRequestActivity;
 import com.amirahmed.eschoola.Models.FeesItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 
 import java.util.List;

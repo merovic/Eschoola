@@ -54,7 +54,7 @@
                 android:layout_marginLeft="10dp"
                 android:orientation="vertical">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/schoolname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="مدرسة العلم العالمية"/>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/schoollevels"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -132,35 +132,35 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Term Number 1"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Term Number 2"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Term Number 3"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Term Number 4"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

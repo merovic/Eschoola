@@ -63,7 +63,7 @@
             android:layout_gravity="center"
             android:src="@drawable/distance_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

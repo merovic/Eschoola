@@ -58,7 +58,7 @@
                     android:layout_marginLeft="10dp"
                     android:orientation="vertical">
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -67,7 +67,7 @@
                         android:layout_marginBottom="5dp"
                         android:text="مدرسة العلم العالمية"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
@@ -137,7 +137,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
@@ -170,7 +170,7 @@
                             android:layout_height="25dp"
                             android:src="@drawable/locationsocial"/>
 
-                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -183,7 +183,7 @@
                     </LinearLayout>
 
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
@@ -218,7 +218,7 @@
                             android:layout_height="25dp"
                             android:src="@drawable/email4social"/>
 
-                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -231,7 +231,7 @@
                     </LinearLayout>
 
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
@@ -265,7 +265,7 @@
                             android:layout_height="25dp"
                             android:src="@drawable/phonesocial"/>
 
-                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -278,7 +278,7 @@
                     </LinearLayout>
 
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
@@ -312,7 +312,7 @@
                             android:layout_height="25dp"
                             android:src="@drawable/faxsocial"/>
 
-                        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                        <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -325,7 +325,7 @@
                     </LinearLayout>
 
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
@@ -365,7 +365,7 @@
                         android:layout_gravity="center"
                         android:src="@drawable/sharesocial"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

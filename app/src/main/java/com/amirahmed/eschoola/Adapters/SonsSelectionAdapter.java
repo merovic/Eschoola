@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.amirahmed.eschoola.Models.SonItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-import com.bumptech.glide.Glide;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.util.List;
 

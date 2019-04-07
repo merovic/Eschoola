@@ -48,7 +48,7 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/aboutus_60x60"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/tosandnotes_90x90"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/rateus_90x90"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/shareapp_90x90"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/text4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

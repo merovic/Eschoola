@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/toolbartext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

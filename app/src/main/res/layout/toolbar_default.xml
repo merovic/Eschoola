@@ -7,7 +7,7 @@
     android:layoutDirection="rtl"
     android:minHeight="@dimen/abc_action_bar_default_height_material">
 
-    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+    <com.amirahmed.eschoola.Utils.TextViewWithFont
         android:id="@+id/toolbartext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

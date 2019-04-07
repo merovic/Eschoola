@@ -9,10 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.amirahmed.eschoola.Activities.DiscountRequestActivity;
-import com.amirahmed.eschoola.Activities.RegistrationActivity;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MySpinnerAdapter;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -163,7 +162,7 @@ public class AddSonFragment extends DialogFragment {
 
         genderspinner = rootView.findViewById(R.id.gender);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, genderlist);
+        MySpinnerAdapter adapter = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, genderlist);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderspinner.setAdapter(adapter);
@@ -172,7 +171,7 @@ public class AddSonFragment extends DialogFragment {
 
         stagesspinner = rootView.findViewById(R.id.stage);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, stageslist);
+        MySpinnerAdapter adapter2 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, stageslist);
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stagesspinner.setAdapter(adapter2);
@@ -181,7 +180,7 @@ public class AddSonFragment extends DialogFragment {
 
         levelsspinner = rootView.findViewById(R.id.level);
 
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, levelslist);
+        MySpinnerAdapter adapter3 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, levelslist);
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         levelsspinner.setAdapter(adapter3);
@@ -190,7 +189,7 @@ public class AddSonFragment extends DialogFragment {
 
         lastspinner = rootView.findViewById(R.id.last);
 
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, lastslist);
+        MySpinnerAdapter adapter4 = new MySpinnerAdapter(getActivity(), android.R.layout.simple_spinner_item, lastslist);
 
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lastspinner.setAdapter(adapter4);

@@ -25,7 +25,7 @@
         android:visibility="gone"
         android:orientation="vertical">
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/languagetitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_gravity="center"
             android:src="@drawable/language_90x90"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
             android:layout_gravity="center"
             android:src="@drawable/notifications3"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

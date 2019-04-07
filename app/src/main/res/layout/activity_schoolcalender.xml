@@ -49,7 +49,7 @@
             android:background="#375C8C"
             android:orientation="vertical">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/eventname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             android:background="#375C8C"
             android:orientation="horizontal">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/dayname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/date1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                     android:textColor="#FFF"
                     android:text="15/11/1435"/>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/date2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/umbrella"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/umbtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
-    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+    <com.amirahmed.eschoola.Utils.TextViewWithFont
         android:id="@+id/textnull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

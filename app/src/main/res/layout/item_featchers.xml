@@ -29,7 +29,7 @@
             android:layout_gravity="center"
             android:src="@drawable/umbrellanew"/>
 
-        <com.amirahmed.eschoola.Utiles.TextViewWithFont
+        <com.amirahmed.eschoola.Utils.TextViewWithFont
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

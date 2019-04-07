@@ -1,6 +1,5 @@
 package com.amirahmed.eschoola.Activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +14,10 @@ import android.widget.TextView;
 import com.amirahmed.eschoola.Adapters.CultureDetailsAdapter;
 import com.amirahmed.eschoola.Models.CultureItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 import com.bumptech.glide.Glide;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 

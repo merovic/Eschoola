@@ -15,7 +15,7 @@
 				  android:layout_marginTop="5dp"
 				  android:orientation="horizontal">
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/requestname"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
 				android:textStyle="bold"
 				android:text="REQUEST NO. 56465"/>
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/requeststatus"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
 
 	</LinearLayout>
 
-	<com.amirahmed.eschoola.Utiles.TextViewWithFont
+	<com.amirahmed.eschoola.Utils.TextViewWithFont
 			android:id="@+id/requestdate"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
 					  android:orientation="vertical"
 					  android:layout_margin="10dp">
 
-			<com.amirahmed.eschoola.Utiles.TextViewWithFont
+			<com.amirahmed.eschoola.Utils.TextViewWithFont
 					android:id="@+id/schoolname"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
 					android:text="Al Hidaya International School"
 					android:textColor="@color/myPrimaryDarkColor"/>
 
-			<com.amirahmed.eschoola.Utiles.TextViewWithFont
+			<com.amirahmed.eschoola.Utils.TextViewWithFont
 					android:id="@+id/studentname"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
 					android:text="Layla Asfer"
 					android:textColor="@color/myPrimaryColor"/>
 
-			<com.amirahmed.eschoola.Utiles.TextViewWithFont
+			<com.amirahmed.eschoola.Utils.TextViewWithFont
 					android:id="@+id/genderandlevel"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -200,7 +200,7 @@
 			android:padding="10dp"
 			android:background="@drawable/rounded_blue_dual">
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/totalamount"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
 				android:layout_height="match_parent"
 				android:background="@color/myDrawerBackground"/>
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/discountamount"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -233,7 +233,7 @@
 			  android:layout_height="match_parent"
 			  android:background="@color/myDrawerBackground"/>
 
-		<com.amirahmed.eschoola.Utiles.TextViewWithFont
+		<com.amirahmed.eschoola.Utils.TextViewWithFont
 				android:id="@+id/paidamount"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

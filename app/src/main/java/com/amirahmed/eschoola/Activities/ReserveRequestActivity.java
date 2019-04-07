@@ -1,10 +1,8 @@
 package com.amirahmed.eschoola.Activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +15,10 @@ import android.widget.*;
 import com.amirahmed.eschoola.Adapters.SonsSelectionAdapter;
 import com.amirahmed.eschoola.Models.SonItem;
 import com.amirahmed.eschoola.R;
-import com.amirahmed.eschoola.Utiles.MyUtilFile;
-import com.amirahmed.eschoola.Utiles.TinyDB;
-import com.bumptech.glide.Glide;
+import com.amirahmed.eschoola.Utils.MySpinnerAdapter;
+import com.amirahmed.eschoola.Utils.MyUtilFile;
+import com.amirahmed.eschoola.Utils.TinyDB;
 
-import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -184,7 +181,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
 
         genderspinner = findViewById(R.id.gender);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genderlist);
+        MySpinnerAdapter adapter = new MySpinnerAdapter(this, android.R.layout.simple_spinner_item, genderlist);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderspinner.setAdapter(adapter);
@@ -193,7 +190,7 @@ public class ReserveRequestActivity extends AppCompatActivity {
 
         lastspinner = findViewById(R.id.last);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, lastslist);
+        MySpinnerAdapter adapter2 = new MySpinnerAdapter(this, android.R.layout.simple_spinner_item, lastslist);
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lastspinner.setAdapter(adapter2);

@@ -82,7 +82,7 @@
     <activity android:name=".Activities.DistanceSelectionActivity"
               android:screenOrientation="portrait"/>
 
-    <activity android:name=".Utiles.NewSplashScreen"
+    <activity android:name=".Utils.NewSplashScreen"
               android:screenOrientation="portrait">
 
         <intent-filter>

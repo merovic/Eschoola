@@ -44,14 +44,14 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/myPrimaryColor"
                         android:textStyle="bold"
                         android:text="Ahmed Mohamed Ibrahim"/>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Email@mail.com"/>

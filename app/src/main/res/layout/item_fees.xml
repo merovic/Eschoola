@@ -19,7 +19,7 @@
             android:layout_margin="5dp"
             android:orientation="vertical">
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 android:textSize="16sp"
                 android:layout_gravity="center"/>
 
-            <com.amirahmed.eschoola.Utiles.TextViewWithFont
+            <com.amirahmed.eschoola.Utils.TextViewWithFont
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                         android:layout_height="20dp"
                         android:src="@drawable/uniform_90x90"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/uniformtext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
 
                 </LinearLayout>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/uniformamount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                         android:layout_height="20dp"
                         android:src="@drawable/books_90x90"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/bookstext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
 
                 </LinearLayout>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/booksamount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
                         android:layout_height="20dp"
                         android:src="@drawable/bus_one_way_blue_new_90x90"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/bustext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
 
                 </LinearLayout>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/bus1amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -194,7 +194,7 @@
                         android:layout_height="20dp"
                         android:src="@drawable/bus_2_way_blue_90x90"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/bus2text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
 
                 </LinearLayout>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/bus2amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -237,7 +237,7 @@
                         android:layout_height="20dp"
                         android:src="@drawable/tosandnotes_90x90"/>
 
-                    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                    <com.amirahmed.eschoola.Utils.TextViewWithFont
                         android:id="@+id/notiestext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -247,7 +247,7 @@
 
                 </LinearLayout>
 
-                <com.amirahmed.eschoola.Utiles.TextViewWithFont
+                <com.amirahmed.eschoola.Utils.TextViewWithFont
                     android:id="@+id/comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

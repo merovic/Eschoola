@@ -4,7 +4,7 @@
               android:layoutDirection="rtl"
               android:layout_height="48dp">
 
-    <com.amirahmed.eschoola.Utiles.TextViewWithFont
+    <com.amirahmed.eschoola.Utils.TextViewWithFont
         android:id="@+id/item_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
