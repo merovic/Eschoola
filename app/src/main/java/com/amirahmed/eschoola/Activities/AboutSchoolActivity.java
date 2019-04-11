@@ -145,12 +145,26 @@ public class AboutSchoolActivity extends AppCompatActivity {
 
         schoolsFeathersItems = new ArrayList<>();
 
-        schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1553440360/bg1.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1553440348/boygirlblue.png","Boys and Girls"));
-        schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1553440360/bg1.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1553440348/boygirlblue.png","Boys and Girls"));
-        schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1553440360/bg1.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1553440348/boygirlblue.png","Boys and Girls"));
-        schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1553440360/bg1.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1553440348/boygirlblue.png","Boys and Girls"));
+        if(language==1)
+        {
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713196/sports.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/play_grounds_90x90.png","منشئات رياضية"));
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713202/libraries.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/library_90x90.png","مكتبات و معامل"));
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713206/bulding1.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/schooltype_90x90.png","دولية"));
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713243/bulding2.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/course_type_90x90.png","أميريكى"));
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554714468/students.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/gender_90x90.png","مشتركة"));
+            schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713248/accreditation.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716608/acswascapproved_90x90.png","اعتماد دولى"));
 
-    }
+        }else
+            {
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713196/sports.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/play_grounds_90x90.png","Sports Facilities"));
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713202/libraries.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/library_90x90.png","Libraries and Laps"));
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713206/bulding1.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/schooltype_90x90.png","International"));
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713243/bulding2.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/course_type_90x90.png","American"));
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554714468/students.jpg","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716607/gender_90x90.png","Boys and Girls"));
+                schoolsFeathersItems.add(new SchoolsFeathersItem("https://res.cloudinary.com/dtec9smtu/image/upload/v1554713248/accreditation.png","https://res.cloudinary.com/dtec9smtu/image/upload/v1554716608/acswascapproved_90x90.png","ACSW Certificate"));
+            }
+
+}
 
     private void initializeAdapter() {
 

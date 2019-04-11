@@ -46,275 +46,286 @@
 
 		</RelativeLayout>
 
+		<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
 
-		<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:orientation="vertical">
 
-			<de.hdodenhof.circleimageview.CircleImageView
-					android:id="@+id/kidpic"
-					android:layout_width="80dp"
-					android:layout_height="80dp"
-					app:civ_border_color="@color/myPrimaryColor"
-					android:layout_gravity="center"
-					android:layout_marginTop="10dp"
-					app:civ_border_width="2dp"
-					android:src="@drawable/avatardis"/>
+
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:orientation="vertical">
 
 			<LinearLayout
-					android:id="@+id/kidnamelayout"
 					android:layout_width="match_parent"
-					android:layout_height="70dp"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
+					android:layout_height="match_parent"
 					android:orientation="vertical">
 
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlename"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="NAME"
-						android:textStyle="bold"
-						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
-
-				<EditText
-						android:id="@+id/kidname"
-						android:layout_width="match_parent"
-						android:layout_height="match_parent"
+				<de.hdodenhof.circleimageview.CircleImageView
+						android:id="@+id/kidpic"
+						android:layout_width="80dp"
+						android:layout_height="80dp"
+						app:civ_border_color="@color/myPrimaryColor"
 						android:layout_gravity="center"
-						android:hint="Student Full Name"
-						android:paddingLeft="5dp"
-						android:paddingRight="5dp"
-						android:textSize="16sp"
-						android:inputType="textEmailAddress"
-						android:background="@drawable/rounded_blueempty"/>
+						android:layout_marginTop="10dp"
+						app:civ_border_width="2dp"
+						android:src="@drawable/avatardis"/>
 
-			</LinearLayout>
-
-			<LinearLayout
-					android:id="@+id/birthdatelayout"
-					android:layout_width="match_parent"
-					android:layout_height="70dp"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:layout_marginTop="8dp"
-					android:orientation="vertical">
-
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlebirthdate"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="DATE OF BIRTH"
-						android:textStyle="bold"
-						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
-
-				<EditText
-						android:id="@+id/birthdate"
+				<LinearLayout
+						android:id="@+id/kidnamelayout"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent"
-						android:layout_gravity="center"
-						android:hint="DD-MM-YYYY"
-						android:paddingLeft="5dp"
-						android:paddingRight="5dp"
-						android:textSize="16sp"
-						android:inputType="none"
-						android:focusable="false"
-						android:background="@drawable/rounded_blueempty"/>
+						android:layout_height="70dp"
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:orientation="vertical">
 
-			</LinearLayout>
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlename"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="NAME"
+							android:textStyle="bold"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
 
-			<LinearLayout
-					android:id="@+id/genderlayout"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:layout_marginTop="8dp"
-					android:orientation="vertical">
-
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlegender"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="GENDER"
-						android:textStyle="bold"
-						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
-
-
-				<LinearLayout android:layout_width="match_parent"
-							  android:layout_height="40dp"
-							  android:orientation="horizontal">
-
-					<Spinner
-							android:id="@+id/gender"
-							android:layout_width="0dp"
+					<EditText
+							android:id="@+id/kidname"
+							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:layout_weight="1"
-							android:background="@drawable/rounded_blueempty"
-							android:layout_gravity="center"/>
-
-					<ImageView android:layout_width="40dp"
-							   android:layout_height="40dp"
-							   android:padding="13dp"
-							   android:src="@drawable/caretdown"
-							   android:background="@color/myPrimaryDarkColor"/>
+							android:layout_gravity="center"
+							android:hint="Student Full Name"
+							android:paddingLeft="5dp"
+							android:paddingRight="5dp"
+							android:textSize="16sp"
+							android:inputType="textEmailAddress"
+							android:background="@drawable/rounded_blueempty"/>
 
 				</LinearLayout>
 
+				<LinearLayout
+						android:id="@+id/birthdatelayout"
+						android:layout_width="match_parent"
+						android:layout_height="70dp"
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:layout_marginTop="8dp"
+						android:orientation="vertical">
 
-			</LinearLayout>
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlebirthdate"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="DATE OF BIRTH"
+							android:textStyle="bold"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
 
-			<LinearLayout
-					android:id="@+id/stagelayout"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:layout_marginTop="8dp"
-					android:orientation="vertical">
-
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlestage"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="KIDS STAGE"
-						android:textStyle="bold"
-						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
-
-
-				<LinearLayout android:layout_width="match_parent"
-							  android:layout_height="40dp"
-							  android:orientation="horizontal">
-
-					<Spinner
-							android:id="@+id/stage"
-							android:layout_width="0dp"
+					<EditText
+							android:id="@+id/birthdate"
+							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:layout_weight="1"
-							android:background="@drawable/rounded_blueempty"
-							android:layout_gravity="center"/>
-
-					<ImageView android:layout_width="40dp"
-							   android:layout_height="40dp"
-							   android:padding="13dp"
-							   android:src="@drawable/caretdown"
-							   android:background="@color/myPrimaryDarkColor"/>
+							android:layout_gravity="center"
+							android:hint="DD-MM-YYYY"
+							android:paddingLeft="5dp"
+							android:paddingRight="5dp"
+							android:textSize="16sp"
+							android:inputType="none"
+							android:focusable="false"
+							android:background="@drawable/rounded_blueempty"/>
 
 				</LinearLayout>
 
-
-			</LinearLayout>
-
-			<LinearLayout
-					android:id="@+id/levellayout"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:layout_marginTop="8dp"
-					android:orientation="vertical">
-
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlelevel"
-						android:layout_width="wrap_content"
+				<LinearLayout
+						android:id="@+id/genderlayout"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:text="KIDS LEVEL"
-						android:textStyle="bold"
-						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:layout_marginTop="8dp"
+						android:orientation="vertical">
+
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlegender"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="GENDER"
+							android:textStyle="bold"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
 
 
-				<LinearLayout android:layout_width="match_parent"
-							  android:layout_height="40dp"
-							  android:orientation="horizontal">
+					<LinearLayout android:layout_width="match_parent"
+								  android:layout_height="40dp"
+								  android:orientation="horizontal">
 
-					<Spinner
-							android:id="@+id/level"
-							android:layout_width="0dp"
-							android:layout_height="match_parent"
-							android:layout_weight="1"
-							android:background="@drawable/rounded_blueempty"
-							android:layout_gravity="center"/>
+						<Spinner
+								android:id="@+id/gender"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:background="@drawable/rounded_blueempty"
+								android:layout_gravity="center"/>
 
-					<ImageView android:layout_width="40dp"
-							   android:layout_height="40dp"
-							   android:padding="13dp"
-							   android:src="@drawable/caretdown"
-							   android:background="@color/myPrimaryDarkColor"/>
+						<ImageView android:layout_width="40dp"
+								   android:layout_height="40dp"
+								   android:padding="13dp"
+								   android:src="@drawable/caretdown"
+								   android:background="@color/myPrimaryDarkColor"/>
+
+					</LinearLayout>
+
 
 				</LinearLayout>
 
-
-			</LinearLayout>
-
-			<CheckBox
-					android:id="@+id/lastschoolcheck"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="LAST SCHOOL"
-					android:textColor="@color/myPrimaryDarkColor"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:layout_marginTop="8dp"/>
-
-			<LinearLayout
-					android:id="@+id/lastlayout"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="16dp"
-					android:layout_marginRight="16dp"
-					android:visibility="gone"
-					android:orientation="vertical">
-
-				<com.amirahmed.eschoola.Utils.TextViewWithFont
-						android:id="@+id/titlelastschool"
-						android:layout_width="wrap_content"
+				<LinearLayout
+						android:id="@+id/stagelayout"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:visibility="gone"
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:layout_marginTop="8dp"
+						android:orientation="vertical">
+
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlestage"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="KIDS STAGE"
+							android:textStyle="bold"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
+
+
+					<LinearLayout android:layout_width="match_parent"
+								  android:layout_height="40dp"
+								  android:orientation="horizontal">
+
+						<Spinner
+								android:id="@+id/stage"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:background="@drawable/rounded_blueempty"
+								android:layout_gravity="center"/>
+
+						<ImageView android:layout_width="40dp"
+								   android:layout_height="40dp"
+								   android:padding="13dp"
+								   android:src="@drawable/caretdown"
+								   android:background="@color/myPrimaryDarkColor"/>
+
+					</LinearLayout>
+
+
+				</LinearLayout>
+
+				<LinearLayout
+						android:id="@+id/levellayout"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:layout_marginTop="8dp"
+						android:orientation="vertical">
+
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlelevel"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="KIDS LEVEL"
+							android:textStyle="bold"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
+
+
+					<LinearLayout android:layout_width="match_parent"
+								  android:layout_height="40dp"
+								  android:orientation="horizontal">
+
+						<Spinner
+								android:id="@+id/level"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:background="@drawable/rounded_blueempty"
+								android:layout_gravity="center"/>
+
+						<ImageView android:layout_width="40dp"
+								   android:layout_height="40dp"
+								   android:padding="13dp"
+								   android:src="@drawable/caretdown"
+								   android:background="@color/myPrimaryDarkColor"/>
+
+					</LinearLayout>
+
+
+				</LinearLayout>
+
+				<CheckBox
+						android:id="@+id/lastschoolcheck"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
 						android:text="LAST SCHOOL"
 						android:textColor="@color/myPrimaryDarkColor"
-						android:layout_margin="5dp"/>
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:layout_marginTop="8dp"/>
+
+				<LinearLayout
+						android:id="@+id/lastlayout"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="16dp"
+						android:layout_marginRight="16dp"
+						android:visibility="gone"
+						android:orientation="vertical">
+
+					<com.amirahmed.eschoola.Utils.TextViewWithFont
+							android:id="@+id/titlelastschool"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:visibility="gone"
+							android:text="LAST SCHOOL"
+							android:textColor="@color/myPrimaryDarkColor"
+							android:layout_margin="5dp"/>
 
 
-				<LinearLayout android:layout_width="match_parent"
-							  android:layout_height="40dp"
-							  android:orientation="horizontal">
+					<LinearLayout android:layout_width="match_parent"
+								  android:layout_height="40dp"
+								  android:orientation="horizontal">
 
-					<Spinner
-							android:id="@+id/last"
-							android:layout_width="0dp"
-							android:layout_height="match_parent"
-							android:layout_weight="1"
-							android:background="@drawable/rounded_blueempty"
-							android:layout_gravity="center"/>
+						<Spinner
+								android:id="@+id/last"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:background="@drawable/rounded_blueempty"
+								android:layout_gravity="center"/>
 
-					<ImageView android:layout_width="40dp"
-							   android:layout_height="40dp"
-							   android:padding="13dp"
-							   android:src="@drawable/caretdown"
-							   android:background="@color/myPrimaryDarkColor"/>
+						<ImageView android:layout_width="40dp"
+								   android:layout_height="40dp"
+								   android:padding="13dp"
+								   android:src="@drawable/caretdown"
+								   android:background="@color/myPrimaryDarkColor"/>
+
+					</LinearLayout>
+
 
 				</LinearLayout>
 
+				<Button
+						android:id="@+id/submitbutton"
+						android:layout_width="120dp"
+						android:layout_height="30dp"
+						android:text="ADD"
+						android:textColor="@color/myDrawerBackground"
+						android:layout_gravity="center"
+						android:layout_marginTop="8dp"
+						android:layout_marginBottom="8dp"
+						android:background="@drawable/rounded_button"/>
 
 			</LinearLayout>
 
-			<Button
-					android:id="@+id/submitbutton"
-					android:layout_width="120dp"
-					android:layout_height="30dp"
-					android:text="ADD"
-					android:textColor="@color/myDrawerBackground"
-					android:layout_gravity="center"
-					android:layout_marginTop="8dp"
-					android:layout_marginBottom="8dp"
-					android:background="@drawable/rounded_button"/>
-
 		</LinearLayout>
+
+	</ScrollView>
 
 	</LinearLayout>
 
