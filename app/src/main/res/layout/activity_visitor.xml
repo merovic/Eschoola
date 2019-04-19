@@ -243,8 +243,10 @@
                             android:id="@+id/messages"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
+                            android:layout_marginTop="2dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/universitymenu"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/oldschoolyellow"/>
 
                     <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:id="@+id/allschoolstext"
@@ -270,7 +272,7 @@
                             android:layout_height="25dp"
                             android:layout_marginTop="2dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/rss"/>
+                            android:src="@drawable/newsfeednewwhite"/>
 
                     <com.amirahmed.eschoola.Utils.TextViewWithFont
                             android:id="@+id/culturetext"

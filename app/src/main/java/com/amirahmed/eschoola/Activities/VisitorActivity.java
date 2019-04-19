@@ -263,6 +263,9 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
             @Override
             public void onClick(View v) {
 
+                Glide.with(VisitorActivity.this).load(R.drawable.oldschoolyellow).into(allschools);
+                Glide.with(VisitorActivity.this).load(R.drawable.newsfeednewwhite).into(culture);
+
                 sliderlayout.setVisibility(View.VISIBLE);
                 rv2.setVisibility(View.VISIBLE);
                 twotabslayout.setVisibility(View.VISIBLE);
@@ -285,24 +288,12 @@ public class VisitorActivity extends AppCompatActivity implements NavigationDraw
             }
         });
 
-        newslayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                sliderlayout.setVisibility(View.GONE);
-                rv2.setVisibility(View.GONE);
-                rv3.setVisibility(View.VISIBLE);
-                rv4.setVisibility(View.GONE);
-
-                searchView.setVisibility(View.INVISIBLE);
-                filter.setVisibility(View.INVISIBLE);
-
-            }
-        });
-
         infolayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Glide.with(VisitorActivity.this).load(R.drawable.oldschool).into(allschools);
+                Glide.with(VisitorActivity.this).load(R.drawable.newsfeednew).into(culture);
 
                 sliderlayout.setVisibility(View.GONE);
                 twotabslayout.setVisibility(View.GONE);
