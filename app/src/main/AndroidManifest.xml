@@ -121,6 +121,9 @@
         <activity android:name=".Activities.HelpActivity"
         android:screenOrientation="portrait"/>
 
+        <activity android:name=".Activities.EditProfileActivity"
+        android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

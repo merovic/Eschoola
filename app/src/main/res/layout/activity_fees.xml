@@ -58,7 +58,7 @@
                     android:id="@+id/schoolname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:layout_marginBottom="5dp"
@@ -73,7 +73,7 @@
                         android:id="@+id/notcash"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:layout_gravity="center"
                         android:text="الاقساط"/>
 
@@ -95,7 +95,7 @@
                         android:id="@+id/cash"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:layout_gravity="center"
                         android:text="طرق الدفع"/>
 

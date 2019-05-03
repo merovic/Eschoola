@@ -1,6 +1,7 @@
 package com.amirahmed.eschoola.Activities;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -33,6 +34,8 @@ public class GuestProfileActivity extends AppCompatActivity {
     List<SonItem> kidslist = new ArrayList<>();
 
     RecyclerView rv;
+
+    ImageView setting;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,6 +105,17 @@ public class GuestProfileActivity extends AppCompatActivity {
 
         initializeData();
         initializeAdapter();
+
+        setting = findViewById(R.id.setting);
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GuestProfileActivity.this,EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         FloatingActionButton fab;
         fab = findViewById(R.id.fab);

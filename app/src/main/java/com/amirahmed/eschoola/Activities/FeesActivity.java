@@ -65,7 +65,6 @@ public class FeesActivity extends AppCompatActivity {
         notcash = findViewById(R.id.notcash);
 
 
-
         if (language == 1) {
             mToolbar.setVisibility(View.VISIBLE);
             mToolbar2.setVisibility(View.GONE);

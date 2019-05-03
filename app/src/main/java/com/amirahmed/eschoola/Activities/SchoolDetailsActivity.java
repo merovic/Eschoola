@@ -2,6 +2,7 @@ package com.amirahmed.eschoola.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
@@ -240,8 +241,7 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         MarkerOptions marker2 = new MarkerOptions().position(new LatLng(24.821367, 46.780950));
 
         // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.aboutschool_90x90));
-        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.locationsocial));
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.locationsocial));
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(24.638007, 46.712315);
@@ -261,6 +261,18 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         View persistentbottomSheet = coordinatorLayout.findViewById(R.id.bottomsheet);
         iv_trigger = persistentbottomSheet.findViewById(R.id.iv_fab);
         final BottomSheetBehavior behavior = BottomSheetBehavior.from(persistentbottomSheet);
+
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+        }, 3000 );//time in milisecond
+
 
         logo = persistentbottomSheet.findViewById(R.id.logo);
 
@@ -296,31 +308,30 @@ public class SchoolDetailsActivity extends AppCompatActivity implements BaseSlid
         });
 
 
-        if (behavior != null)
-            behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-                @Override
-                public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                    //showing the different states
-                    switch (newState) {
-                        case BottomSheetBehavior.STATE_HIDDEN:
-                            break;
-                        case BottomSheetBehavior.STATE_EXPANDED:
-                            break;
-                        case BottomSheetBehavior.STATE_COLLAPSED:
-                            break;
-                        case BottomSheetBehavior.STATE_DRAGGING:
-                            break;
-                        case BottomSheetBehavior.STATE_SETTLING:
-                            break;
-                    }
+        behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                //showing the different states
+                switch (newState) {
+                    case BottomSheetBehavior.STATE_HIDDEN:
+                        break;
+                    case BottomSheetBehavior.STATE_EXPANDED:
+                        break;
+                    case BottomSheetBehavior.STATE_COLLAPSED:
+                        break;
+                    case BottomSheetBehavior.STATE_DRAGGING:
+                        break;
+                    case BottomSheetBehavior.STATE_SETTLING:
+                        break;
                 }
+            }
 
-                @Override
-                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                    // React to dragging events
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                // React to dragging events
 
-                }
-            });
+            }
+        });
 
     }
 

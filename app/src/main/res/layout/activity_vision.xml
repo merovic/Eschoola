@@ -59,7 +59,7 @@
                     android:id="@+id/schoolname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:text="مدرسة العلم العالمية"/>
@@ -68,7 +68,7 @@
                     android:id="@+id/schoollevels"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:text="دولية | جميع المراحل"/>
 
                 <LinearLayout
