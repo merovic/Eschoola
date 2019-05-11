@@ -132,7 +132,6 @@ public class AboutSchoolActivity extends AppCompatActivity {
             termstext.setText("Apply Terms");
             areaofschool.setText("2300 Meter");
 
-
         }
 
         initializeData();
